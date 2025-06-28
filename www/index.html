@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="title" content="dns.malw.link">
+    <meta name="description" content="Разблокирует недоступные сайты, блокирует мусор, поддержка доменов OpenNIC">
+    <meta name="og:title" content="dns.malw.link">
+    <meta name="og:description" content="Разблокирует недоступные сайты, блокирует мусор, поддержка доменов OpenNIC">
+    <link rel="icon" href="/favicon.ico">
+    <title>dns.malw.link</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CCV7SLXDY"></script>
+    <script>
+        function gtag() {
+            dataLayer.push(arguments)
+        }
+        window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "G-0CCV7SLXDY")
+    </script>
+    <style>
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2) format("woff2");
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        body {
+            user-select: none;
+            font-family: "Google Sans"
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0 center
+            }
+
+            50% {
+                background-position: 100% center
+            }
+
+            100% {
+                background-position: 0 center
+            }
+        }
+
+        .title {
+            font-weight: 500;
+            text-align: center;
+            background: linear-gradient(90deg, #6750a4, #ff006f, #00c6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-animation 2s ease infinite
+        }
+
+        .body-large {
+            font-size: 1rem;
+            line-height: 1.75rem;
+            text-align: center;
+            margin-bottom: 24px
+        }
+
+        nav.left {
+            background-color: var(--surface-container)
+        }
+
+        p {
+            font-size: 1rem;
+            text-wrap: auto
+        }
+
+        li {
+            cursor: default !important
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="m l left"><a class="active" href="/"><i>home</i><span>Главная</span></a><a href="/setup"><i>build</i><span>Настройка</span></a><a href="/resolver"><i>dns</i><span>Резолвер</span></a><a href="/hosts"><i>article</i><span>hosts</span></a><a href="/help"><i>help</i><span>Помощь</span></a>
+        </nav>
+        <nav class="s bottom"><a class="active" href="/"><i>home</i><span>Главная</span></a><a href="/setup"><i>build</i><span>Настройка</span></a><a href="/resolver"><i>dns</i><span>Резолвер</span></a><a href="/hosts"><i>article</i><span>hosts</span></a><a href="/help"><i>help</i><span>Помощь</span></a>
+        </nav>
+        <main class="responsive">
+            <h1 class="title">dns.malw.link</h1>
+            <p class="body-large">Разблокирует недоступные сайты, блокирует мусор, поддержка доменов OpenNIC</p>
+            <article class="border" style="user-select:text">
+                <div style="text-align:center">
+                    <p>IPv4 DNS 1:<code>46.226.165.53</code></p>
+                    <p>IPv4 DNS 2:<code>64.188.98.242</code></p>
+                    <p>IPv6 DNS 1:<code>2a12:5940:cf09::2</code></p>
+                    <p>IPv6 DNS 2:<code>2a01:ecc0:2c1:2::2</code></p>
+                    <p>DNS over TLS:<code>dns.malw.link</code></p>
+                    <p>DNS over HTTPS:<code>https://dns.malw.link/dns-query</code></p>
+                    <p>DNSCrypt
+                        stamp:<code>sdns://AgAAAAAAAAAADTQ2LjIyNi4xNjUuNTMADWRucy5tYWx3LmxpbmsKL2Rucy1xdWVyeQ</code></p>
+                </div>
+                <div style="text-align:center;margin-top:16px"><a class="button" href="/setup"><i>build</i><span>Как
+                            настроить?</span></a></div>
+            </article>
+            <article class="border" id="dns_test">
+                <div style="display:flex;align-items:center;justify-content:center;gap:12px"><progress class="circle small"></progress>
+                    <p style="margin:0;line-height:1;transform:translateY(2px);font-size:1rem">Проверка использования
+                        dns.malw.link</p>
+                </div>
+            </article>
+            <h2 style="text-align:center">Разблокированные сайты:</h2>
+            <ul class="list border">
+                <li><i>check</i><p>Bing Rewards</p></li>
+<li><i>check</i><p>Brawl Stars</p></li>
+                <li><i>check</i><p>Canva</p></li>
+                <li><i>check</i><p>ChatGPT</p></li>
+                <li><i>check</i><p>Clash of Clans</p></li>
+                <li><i>check</i><p>Clash Royale</p></li>
+                <li><i>check</i><p>Claude</p></li>
+                <li><i>check</i><p>DeepL</p></li>
+                <li><i>check</i><p>Deezer</p></li>
+                <li><i>check</i><p>Dyson.com, Dyson.fr</p></li>
+                <li><i>check</i><p>ElevenLabs</p></li>
+                <li><i>check</i><p>ElevenReader</p></li>
+                <li><i>check</i><p>FitBit (для Google Pixel Watch)</p></li>
+                <li><i>check</i><p>GeForce Now</p></li>
+                <li><i>check</i><p>Gemini API</p></li>
+                <li><i>check</i><p>Gemini</p></li>
+                <li><i>check</i><p>GitHub Copilot</p></li>
+                <li><i>check</i><p>Google AI Studio</p></li>
+                <li><i>check</i><p>Google Jules</p></li>
+                <li><i>check</i><p>Google Stitch</p></li>
+                <li><i>check</i><p>Grok</p></li>
+                <li><i>check</i><p>Guilded</p></li>
+                <li><i>check</i><p>Imgur (загрузка изображений)</p></li>
+                <li><i>check</i><p>JetBrains Datalore</p></li>
+                <li><i>check</i><p>Microsoft Copilot</p></li>
+                <li><i>check</i><p>NotebookLM</p></li>
+                <li><i>check</i><p>Notion</p></li>
+                <li><i>check</i><p>OpenAI API</p></li>
+                <li><i>check</i><p>Parsec</p></li>
+                <li><i>check</i><p>Sora</p></li>
+                <li><i>check</i><p>Spotify</p></li>
+                <li><i>check</i><p>Supercell Store</p></li>
+                <li><i>check</i><p>Tidal</p></li>
+                <li><i>check</i><p>TikTok (только в браузере)</p><div><i>help</i><div class="tooltip">Для приложения не сработает, оно определяет страну не по IP, используйте моды</div></div></li>
+                <li><i>check</i><p>Tria.ge</p></li>
+                <li><i>check</i><p>Truth Social</p></li>
+                <li><i>check</i><p>Twitch</p><div><i>help</i><div class="tooltip">Разблокировано качество 1080p</div></div></li>
+                <li><i>check</i><p>Weather.com</p></li>
+                <li><i>check</i><p>Web.archive.org</p><div><i>help</i><div class="tooltip">Архивы некоторых сайтов для российских IP там недоступны</div></div></li>
+                <li><i>check</i><p>WikiDot</p></li>
+                <li><i>check</i><p>Xbox Cloud Gaming</p></li>
+                <li><i>check</i><p>Xbox (для консолей)</p></li>
+                <li><i>check</i><p>Загрузка плагинов в JetBrains IDE</p></li>
+                <li><i>check</i><p>4PDA</p><div><i>help</i><div class="tooltip">Скрытый раздел</div></div></li>
+            </ul>
+            <h2 style="text-align:center">Заблокировано:</h2>
+            <ul class="list border">
+                <li><i>close</i>
+                    <p>Adcolony (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Amazon AWS Analytics (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Bugsnag (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Byteoversea (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>dobleclick.net (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Freshmarketer (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Google Ads (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>googlesyndication.com (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Hotjar (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>iplogger.org</p>
+                </li>
+                <li><i>close</i>
+                    <p>Luckyorange (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>media.net (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Mouseflow (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>samsungads.com (реклама)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Sentry (слежка)</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама в Unity играх</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Apple</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Huawei</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Oppo</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Pinterest</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Realme</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от TikTok</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Xiaomi</p>
+                </li>
+                <li><i>close</i>
+                    <p>Реклама, слежка от Yahoo</p>
+                </li>
+                <li><i>close</i>
+                    <p>Слежка от LinkedIn</p>
+                </li>
+                <li><i>close</i>
+                    <p>Слежка от Reddit</p>
+                </li>
+                <li><i>close</i>
+                    <p>Яндекс Метрика (слежка)</p>
+                </li>
+            </ul>
+        </main>
+    </div>
+    <script>
+        function dns_set() {
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="https://i.imgur.com/XLLQhgV.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+        }
+
+        function dns_unset() {
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="https://i.imgur.com/1m1vBTj.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+        }
+        async function test_dns() {
+            await fetch('https://test.dns.malw.link/').then(dns_set).catch(dns_unset)
+        }
+        test_dns()
+    </script>
+</body>
+
+</html>

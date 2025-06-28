@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://info.dns.malw.link/sitemap.xml

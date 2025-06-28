@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang=ru>
+
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta name=title content="Настройка dns.malw.link">
+    <meta name=description content="Настройка DNS-сервера dns.malw.link">
+    <meta name=og:title content="Настройка dns.malw.link">
+    <meta name=og:description content="Настройка DNS-сервера dns.malw.link">
+    <link rel=icon href=/favicon.ico>
+    <title>Настройка dns.malw.link</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet>
+    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.css>
+    <script type=module src=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.js></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CCV7SLXDY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-0CCV7SLXDY');
+
+        function open_tab(tab, el) {
+            document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
+            document.querySelectorAll('.page').forEach(e => e.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById(tab).classList.add('active')
+        }
+    </script>
+    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+    <style>
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2) format("woff2");
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        body {
+            user-select: none;
+            font-family: "Google Sans"
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0 center
+            }
+
+            50% {
+                background-position: 100% center
+            }
+
+            100% {
+                background-position: 0 center
+            }
+        }
+
+        .title {
+            font-weight: 500;
+            text-align: center;
+            background: linear-gradient(90deg, #6750a4, #ff006f, #00c6ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: gradient-animation 2s ease infinite
+        }
+
+        nav.left {
+            background-color: var(--surface-container)
+        }
+
+        nav.tabbed {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 15px
+        }
+
+        p {
+            font-size: 1rem;
+            text-wrap: auto
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="m l left"><a href= /><i>home</i><span>Главная</span></a><a class=active href=/setup><i>build</i><span>Настройка</span></a><a href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <nav class="s bottom"><a href= /><i>home</i><span>Главная</span></a><a class=active href=/setup><i>build</i><span>Настройка</span></a><a href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <main class=responsive>
+            <h1 class=title>dns.malw.link</h1>
+            <article class=border id=dns_test>
+                <div style=display:flex;align-items:center;justify-content:center;gap:12px><progress class="circle small"></progress>
+                    <p style=margin:0;line-height:1;transform:translateY(2px);font-size:1rem>Проверка использования dns.malw.link</p>
+                </div>
+            </article>
+            <nav class=tabbed><a class="active tab" onclick='open_tab("browser",this)'><i>globe</i><span>Браузер на ПК</span></a><a onclick='open_tab("android",this)' class=tab><i class="fa-brands fa-android"></i><span>Android</span></a><a onclick='open_tab("ios",this)' class=tab><i class="fa-brands fa-apple"></i><span>iOS/macOS</span></a><a onclick='open_tab("windows",this)' class=tab><i class="fa-brands fa-windows"></i><span>Windows</span></a><a onclick='open_tab("router",this)' class=tab><i>router</i><span>Роутер</span></a><a onclick='open_tab("xbox",this)' class=tab><i class="fa-brands fa-xbox"></i><span>Xbox</span></a></nav>
+            <div class="page padding active" id=browser>
+                <h3>На Chrome/Edge/Vivaldi/Brave/Opera и т.д.</h3>
+                <p>Откройте страницу<code>chrome://settings/security</code>(скопируйте и вставьте в адресную строку, нажмите Enter)</p><button onclick='navigator.clipboard.writeText("chrome://settings/security"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>В разделе "Дополнительные настройки" включите "Использовать безопасный DNS-сервер"</p>
+                <p>В выпадающем меню "Выбрать поставщика услуг DNS" выберите "Добавить своего поставщика услуг DNS"
+                <p>
+                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <h3>На Firefox</h3>
+                <p>Откройте страницу<code>about:settings#privacy</code>(скопируйте и вставьте в адресную строку, нажмите Enter)</p><button onclick='navigator.clipboard.writeText("about:settings#privacy"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>В самом низу будет раздел "Включить DNS через HTTPS". Выберите пункт "Максимальную защиту", в выпадающем меню выберите "Другой URL</p>
+                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+            </div>
+            <div class="page padding" id=android>
+                <p>Найдите в Настройках Android "Частный DNS-сервер". На каждой прошивке пункт находится в разных разделах, поэтому проще всего использовать поиск.</p>
+                <p>В меню "Частный DNS-сервер" выберите "Вручную" и введите адрес<code>dns.malw.link</code></p><button onclick='navigator.clipboard.writeText("dns.malw.link"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+            </div>
+            <div class="page padding" id=ios>
+                <p>Скачайте файл mobileconfig:</p><a href=/dns.malw.link.mobileconfig class=button download=dns.malw.link.mobileconfig><i>download</i><span>Скачать</span></a>
+                <p>Откройте его из файлов. Должно появиться сообщение "Профиль загружен"</p>
+                <p>Откройте настройки. В настройках появиться раздел "Профиль загружен"</p>
+                <p>Нажмите на него, затем "Установить" в правом верхнем углу</p>
+            </div>
+            <div class="page padding" id=windows>
+                <h3>Для Windows 7, 8, 10 (для 11 смотрите ниже)</h3>
+                <p>Откройте "Панель управления" (можно найти в поиске Windows)</p>
+                <p>Перейдите в раздел "Сеть и Интернет" > "Центр управления сетями и общим доступом"</p>
+                <p>Слева выберите "Изменение параметров адаптера"</p>
+                <p>Нажмите правой кнопкой мыши на ваше подключение (Ethernet или Wi-Fi) и выберите "Свойства"</p>
+                <p>Выберите "IP версии 4" и нажмите "Свойства"</p>
+                <p>Установите флажок "Использовать следующие адреса DNS-серверов"</p>
+                <p>Предпочитаемый DNS-сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Альтернативный DNS-сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Нажмите ОК. Если у вас есть IPv6, Выберите "IP версии 6" и нажмите "Свойства"</p>
+                <p>Установите флажок "Использовать следующие адреса DNS-серверов"</p>
+                <p>Предпочитаемый DNS-сервер:<code>2a12:5940:cf09::2</code></p><button onclick='navigator.clipboard.writeText("2a12:5940:cf09::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Альтернативный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Нажмите ОК</p>
+                <h3>Для Windows 11</h3>
+                <h5>Для проводного соединения:</h5>
+                <p>Параметры > Сеть и Интернет > Ethernet > Назначение DNS-сервера > Изменить > Вручную</p>
+                <h5>Для WiFi:</h5>
+                <p>Параметры > Сеть и Интернет > Wi-Fi > Свойства [название беспроводной сети] > Назначение DNS-сервера > Изменить > Вручную</p>
+                <p>IPv4: вкл</p>
+                <p>Предпочтительный DNS-сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS по протоколу HTTPS: Включено (ручной шаблон)</p>
+                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный DNS-сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS по протоколу HTTPS: Выключено</p>
+                <p>IPv6: включите, если у вас есть IPv6</p>
+                <p>Предпочтительный DNS-сервер:<code>2a12:5940:cf09::2</code></p><button onclick='navigator.clipboard.writeText("2a12:5940:cf09::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS по протоколу HTTPS: Включено (ручной шаблон)</p>
+                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS по протоколу HTTPS: Выключено</p>
+            </div>
+            <div class="page padding" id=router>
+                <p>Во всех роутерах эта настройка находится в разных местах, поэтому универсальной инструкции быть не может. Поищите настройки DNS в роутере. Скорее всего, они в разделе WAN.</p>
+                <p>DNS 1:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS 2:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+            </div>
+            <div class="page padding" id=xbox>
+                <p>Нажмите кнопку Xbox на контроллере, выберите "Параметры"</p>
+                <p>В разделе "Параметры сети" выберите "Дополнительные настройки"</p>
+                <p>В разделе "Параметры DNS", выберите "Вручную"</p>
+                <p>Основной сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+            </div>
+        </main>
+    </div>
+    <script>
+        function dns_set() {
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="https://i.imgur.com/XLLQhgV.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+        }
+
+        function dns_unset() {
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="https://i.imgur.com/1m1vBTj.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+        }
+        async function test_dns() {
+            await fetch('https://test.dns.malw.link/').then(dns_set).catch(dns_unset)
+        }
+        test_dns()
+    </script>
+</body>
+
+</html>

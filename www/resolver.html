@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang=ru>
+
+<head>
+    <meta charset=UTF-8 />
+    <meta name=viewport content="width=device-width, initial-scale=1.0" />
+    <meta name=title content="Резолвер dns.malw.link" />
+    <meta name=description content="Онлайн DNS резолвер" />
+    <meta name=og:title content="Резолвер dns.malw.link" />
+    <meta name=og:description content="Онлайн DNS резолвер" />
+    <link rel=icon href=/favicon.ico />
+    <title>Резолвер dns.malw.link</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet />
+    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.css />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CCV7SLXDY"></script>
+    <script type=module src=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.js></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-0CCV7SLXDY');
+        const dns_types = {
+            1: "A",
+            2: "NS",
+            5: "CNAME",
+            6: "SOA",
+            13: "HINFO",
+            15: "MX",
+            16: "TXT",
+            28: "AAAA",
+            29: "LOC",
+            33: "SRV",
+            35: "NAPTR",
+            39: "DNAME",
+            43: "DS",
+            44: "SSHFP",
+            45: "IPSECKEY",
+            46: "RRSIG",
+            47: "NSEC",
+            48: "DNSKEY",
+            49: "DHCID",
+            50: "NSEC3",
+            51: "NSEC3PARAM",
+            52: "TLSA",
+            64: "SVCB",
+            65: "HTTPS",
+            99: "SPF",
+            255: "ANY",
+            256: "URI",
+            257: "CAA"
+        };
+        async function dns() {
+            if (!q.value) {
+                q_div.classList.add('invalid');
+                q_div.querySelector('.error').style.display = 'block';
+                return;
+            }
+            q_div.classList.remove('invalid');
+            q_div.querySelector('.error').style.display = 'none';
+            dns_button.disabled = true;
+            dns_button.innerHTML = '<progress class="circle small"></progress>';
+            let resps = [];
+            let response;
+            for (const dnsresp of document.querySelectorAll('.dnsresp')) {
+                dnsresp.remove();
+            }
+            q.value = q.value.replace(/^https?:\/\/([^\/]+).*/, '$1');
+            switch (s.value) {
+                case 'Google DNS':
+                    for (const type of Object.keys(dns_types)) {
+                        response = await (await fetch('https://8.8.8.8/resolve?name=' + q.value + '&type=' + type, {
+                            headers: {
+                                'Accept': 'application/dns-json'
+                            }
+                        })).json();
+                        resps.push(...(response.Answer || []).map(record => ({
+                            type: dns_types[record.type] || record.type,
+                            value: record.data
+                        })));
+                        await new Promise(res => setTimeout(res, 100));
+                    }
+                    break;
+                case 'Cloudflare':
+                    for (const type of Object.keys(dns_types)) {
+                        response = await (await fetch('https://1.1.1.1/dns-query?name=' + q.value + '&type=' + type, {
+                            headers: {
+                                'Accept': 'application/dns-json'
+                            }
+                        })).json();
+                        resps.push(...(response.Answer || []).map(record => ({
+                            type: dns_types[record.type] || record.type,
+                            value: record.data
+                        })));
+                        await new Promise(res => setTimeout(res, 100));
+                    }
+                    break;
+                case 'dns.malw.link':
+                    response = await (await fetch('https://dns.malw.link/dns-api?server=dns&q=' + q.value)).json();
+                    if (!response) resps = [];
+                    else resps.push(...response);
+                    break;
+                case 'OpenNIC':
+                    response = await (await fetch('https://dns.malw.link/dns-api?server=193.31.24.55&q=' + q.value)).json();
+                    if (!response) resps = [];
+                    else resps.push(...response);
+                    break;
+            }
+            for (const note of resps) {
+                const row = document.createElement('tr');
+                row.classList.add('dnsresp');
+                row.innerHTML = `<td class="min"><code>${note.type}</code></td><td>${note.value}<button onclick='navigator.clipboard.writeText(${JSON.stringify(note.value)}); this.firstChild.textContent = "check"'><i>content_copy</i></button></td>`;
+                r.appendChild(row);
+            }
+            dns_button.innerHTML = '<i>search</i>';
+            dns_button.disabled = false;
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2) format("woff2");
+            unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+        }
+
+        @font-face {
+            font-family: "Google Sans";
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2) format("woff2");
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+        }
+
+        body {
+            user-select: none;
+            font-family: "Google Sans"
+        }
+
+        nav.left {
+            background-color: var(--surface-container)
+        }
+
+        td {
+            text-wrap: auto
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav class="m l left"><a href= /><i>home</i><span>Главная</span></a><a href=/setup><i>build</i><span>Настройка</span></a><a class=active href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <nav class="s bottom"><a href= /><i>home</i><span>Главная</span></a><a href=/setup><i>build</i><span>Настройка</span></a><a class=active href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <main class=responsive>
+            <div style=display:flex;justify-content:center;gap:15px;align-items:flex-end>
+                <div id=q_div class="field label border"><input id=q type=text placeholder=" "><label>Запрос</label><span class=error style=display:none>Обязательное поле</span></div>
+                <div class="field label suffix border"><select id=s style=cursor:default>
+                        <option>Cloudflare</option>
+                        <option>Google DNS</option>
+                        <option>dns.malw.link</option>
+                        <option>OpenNIC</option>
+                    </select><label>DNS-сервер</label><i>arrow_drop_down</i></div><button onclick=dns() id=dns_button style=align-self:flex-start;margin-top:20px><i>search</i></button>
+            </div>
+            <article class=border id=dns_test>
+                <table>
+                    <thead>
+                        <tr>
+                            <th class=min>Тип</th>
+                            <th>Значение</th>
+                        </tr>
+                    </thead>
+                    <tbody id=r></tbody>
+                </table>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>
