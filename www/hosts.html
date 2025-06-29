@@ -25,7 +25,7 @@
 
       function hosts(type) {
         if (type == 1) {
-          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/main/hosts').then(resp => resp.blob()).then(text => {
+          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts').then(resp => resp.blob()).then(text => {
             const blob = new Blob([text], {
               type: "application/octet-stream"
             });
@@ -38,7 +38,7 @@
             URL.revokeObjectURL(a.href);
           }).catch(err => alert("Ошибка при загрузке файла: " + err));
         } else {
-          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/main/hosts').then(response => {
+          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts').then(response => {
             if (!response.ok) throw new Error('Проверьте соединение с GitHub');
             return response.text();
           }).then(text => {
@@ -257,9 +257,9 @@
                 <i>content_copy</i>
                 <span>Копировать</span>
               </button>
-              <p>Местоположение — <code>https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/main/hosts</code>
+              <p>Местоположение — <code>https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts</code>
               </p>
-              <button onclick="navigator.clipboard.writeText('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/main/hosts');this.firstChild.textContent='check'">
+              <button onclick="navigator.clipboard.writeText('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts');this.firstChild.textContent='check'">
                 <i>content_copy</i>
                 <span>Копировать</span>
               </button>
