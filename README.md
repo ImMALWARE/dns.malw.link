@@ -7,14 +7,14 @@
 4. web - Веб-страницы (info.dns.malw.link)
 
 ## Как всё это запустить у себя?
-Предполагается, что DNS-сервер на одном сервере, а SNI Proxy на другом.
+Предполагается, что DNS-севрер и SNI Proxy находятся на разных серверах.
 
 ### Для DNS-сервера
 1. Убедитесь, что у вас установлен Docker и Docker Compose. Если не знаете как - спросите у ChatGPT.
 2. `git clone -b dns-server --single-branch https://github.com/ImMALWARE/dns.malw.link`
 3. `cd dns.malw.link`
 4. Замените IP-адреса SNI Proxy в файле `dnsdist.conf` на адреса своих серверов. Нужные для этого строки там прокомментированы.
-5. Для DNS over TLS и DNS over HTTPS раскомментируйте соответствующие строки в `dnsdist.conf` и в `docker-compose.yml`, поместите сертификаты в папку `certs`.
+5. Если вам нужен DNS over TLS и DNS over HTTPS, поместите сертификаты для них в папку `certs` (fullchain.cer и key.key). Если нет, закомментируйте строки 4 и 5 в `dnsdist.conf` и 10, 11, 17 в `docker-compose.yml`.
 6. `docker-compose up -d`
 
 ### Для SNI Proxy
