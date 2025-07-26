@@ -31,3 +31,4 @@ augmentcode.com
 mongodb.com
 hybrid-analysis.com
 grokusercontent.com
+oaistatic.com
