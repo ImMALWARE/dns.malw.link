@@ -7,6 +7,9 @@
         <loc>https://info.dns.malw.link/setup</loc>
     </url>
     <url>
+        <loc>https://info.dns.malw.link/setup/cloudflare</loc>
+    </url>
+    <url>
         <loc>https://info.dns.malw.link/resolver</loc>
     </url>
     <url>

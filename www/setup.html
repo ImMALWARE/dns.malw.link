@@ -100,34 +100,77 @@
 
 <body>
     <div>
-        <nav class="m l left"><a href= /><i>home</i><span>Главная</span></a><a class=active href=/setup><i>build</i><span>Настройка</span></a><a href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
-        <nav class="s bottom"><a href= /><i>home</i><span>Главная</span></a><a class=active href=/setup><i>build</i><span>Настройка</span></a><a href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <nav class="m l left"><a href= /><i>home</i><span>Главная</span></a><a class=active
+                href=/setup><i>build</i><span>Настройка</span></a><a
+                href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a
+                href=/help><i>help</i><span>Помощь</span></a></nav>
+        <nav class="s bottom"><a href= /><i>home</i><span>Главная</span></a><a class=active
+                href=/setup><i>build</i><span>Настройка</span></a><a
+                href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a
+                href=/help><i>help</i><span>Помощь</span></a></nav>
         <main class=responsive>
             <h1 class=title>dns.malw.link</h1>
+            <article class="border" style="user-select:text">
+                <div style="text-align:center"><a class="button" href="/setup/cloudflare"><i>build</i><span>Вместо этого настроить DNS на Cloudflare Gateway</span></a></div>
+                <ul class="list border">
+                    <li>
+                        <i>thumb_up</i>
+                        <p>Тот же dns.malw.link на серверах Cloudflare</p>
+                    </li>
+                    <li>
+                        <i>thumb_up</i>
+                        <p>Значительно быстрее и стабильнее</p>
+                    </li>
+                    <li>
+                        <i>thumb_down</i>
+                        <p>Только DNS over HTTPS и DNS over TLS (можно установить только в Chrome, Firefox, Android, iOS/macOS)</p>
+                    </li>
+
+                </ul>
+            </article>
             <article class=border id=dns_test>
-                <div style=display:flex;align-items:center;justify-content:center;gap:12px><progress class="circle small"></progress>
-                    <p style=margin:0;line-height:1;transform:translateY(2px);font-size:1rem>Проверка использования dns.malw.link</p>
+                <div style=display:flex;align-items:center;justify-content:center;gap:12px><progress
+                        class="circle small"></progress>
+                    <p style=margin:0;line-height:1;transform:translateY(2px);font-size:1rem>Проверка использования
+                        dns.malw.link</p>
                 </div>
             </article>
-            <nav class=tabbed><a class="active tab" onclick='open_tab("browser",this)'><i>globe</i><span>Браузер на ПК</span></a><a onclick='open_tab("android",this)' class=tab><i class="fa-brands fa-android"></i><span>Android</span></a><a onclick='open_tab("ios",this)' class=tab><i class="fa-brands fa-apple"></i><span>iOS/macOS</span></a><a onclick='open_tab("windows",this)' class=tab><i class="fa-brands fa-windows"></i><span>Windows</span></a><a onclick='open_tab("router",this)' class=tab><i>router</i><span>Роутер</span></a><a onclick='open_tab("xbox",this)' class=tab><i class="fa-brands fa-xbox"></i><span>Xbox</span></a></nav>
+            <nav class=tabbed><a class="active tab" onclick='open_tab("browser",this)'><i>globe</i><span>Браузер на
+                        ПК</span></a><a onclick='open_tab("android",this)' class=tab><i
+                        class="fa-brands fa-android"></i><span>Android</span></a><a onclick='open_tab("ios",this)'
+                    class=tab><i class="fa-brands fa-apple"></i><span>iOS/macOS</span></a><a
+                    onclick='open_tab("windows",this)' class=tab><i
+                        class="fa-brands fa-windows"></i><span>Windows</span></a><a onclick='open_tab("router",this)'
+                    class=tab><i>router</i><span>Роутер</span></a><a onclick='open_tab("xbox",this)' class=tab><i
+                        class="fa-brands fa-xbox"></i><span>Xbox</span></a></nav>
             <div class="page padding active" id=browser>
                 <h3>На Chrome/Edge/Vivaldi/Brave/Opera и т.д.</h3>
-                <p>Откройте страницу<code>chrome://settings/security</code>(скопируйте и вставьте в адресную строку, нажмите Enter)</p><button onclick='navigator.clipboard.writeText("chrome://settings/security"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Откройте страницу<code>chrome://settings/security</code>(скопируйте и вставьте в адресную строку,
+                    нажмите Enter)</p><button
+                    onclick='navigator.clipboard.writeText("chrome://settings/security"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>В разделе "Дополнительные настройки" включите "Использовать безопасный DNS-сервер"</p>
                 <p>В выпадающем меню "Выбрать поставщика услуг DNS" выберите "Добавить своего поставщика услуг DNS"
                 <p>
-                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button
+                    onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <h3>На Firefox</h3>
-                <p>Откройте страницу<code>about:settings#privacy</code>(скопируйте и вставьте в адресную строку, нажмите Enter)</p><button onclick='navigator.clipboard.writeText("about:settings#privacy"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>В самом низу будет раздел "Включить DNS через HTTPS". Выберите пункт "Максимальную защиту", в выпадающем меню выберите "Другой URL</p>
-                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Откройте страницу<code>about:settings#privacy</code>(скопируйте и вставьте в адресную строку, нажмите
+                    Enter)</p><button
+                    onclick='navigator.clipboard.writeText("about:settings#privacy"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>В самом низу будет раздел "Включить DNS через HTTPS". Выберите пункт "Максимальную защиту", в
+                    выпадающем меню выберите "Другой URL</p>
+                <p>В текстовом поле введите<code>https://dns.malw.link/dns-query</code></p><button
+                    onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
             </div>
             <div class="page padding" id=android>
-                <p>Найдите в Настройках Android "Частный DNS-сервер". На каждой прошивке пункт находится в разных разделах, поэтому проще всего использовать поиск.</p>
-                <p>В меню "Частный DNS-сервер" выберите "Вручную" и введите адрес<code>dns.malw.link</code></p><button onclick='navigator.clipboard.writeText("dns.malw.link"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Найдите в Настройках Android "Частный DNS-сервер". На каждой прошивке пункт находится в разных
+                    разделах, поэтому проще всего использовать поиск.</p>
+                <p>В меню "Частный DNS-сервер" выберите "Вручную" и введите адрес <code>dns.malw.link</code></p><button
+                    onclick='navigator.clipboard.writeText("dns.malw.link"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
             </div>
             <div class="page padding" id=ios>
-                <p>Скачайте файл mobileconfig:</p><a href=/dns.malw.link.mobileconfig class=button download=dns.malw.link.mobileconfig><i>download</i><span>Скачать</span></a>
+                <p>Скачайте файл mobileconfig:</p><a href=/dns.malw.link.mobileconfig class=button
+                    download=dns.malw.link.mobileconfig><i>download</i><span>Скачать</span></a>
                 <p>Откройте его из файлов. Должно появиться сообщение "Профиль загружен"</p>
                 <p>Откройте настройки. В настройках появиться раздел "Профиль загружен"</p>
                 <p>Нажмите на него, затем "Установить" в правом верхнем углу</p>
@@ -140,42 +183,58 @@
                 <p>Нажмите правой кнопкой мыши на ваше подключение (Ethernet или Wi-Fi) и выберите "Свойства"</p>
                 <p>Выберите "IP версии 4" и нажмите "Свойства"</p>
                 <p>Установите флажок "Использовать следующие адреса DNS-серверов"</p>
-                <p>Предпочитаемый DNS-сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>Альтернативный DNS-сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Предпочитаемый DNS-сервер:<code>45.95.233.23</code></p><button
+                    onclick='navigator.clipboard.writeText("45.95.233.23"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Альтернативный DNS-сервер:<code>64.188.98.242</code></p><button
+                    onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>Нажмите ОК. Если у вас есть IPv6, Выберите "IP версии 6" и нажмите "Свойства"</p>
                 <p>Установите флажок "Использовать следующие адреса DNS-серверов"</p>
-                <p>Предпочитаемый DNS-сервер:<code>2a12:5940:cf09::2</code></p><button onclick='navigator.clipboard.writeText("2a12:5940:cf09::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>Альтернативный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Предпочитаемый DNS-сервер:<code>2a05:541:104:7f::1</code></p><button
+                    onclick='navigator.clipboard.writeText("2a05:541:104:7f::1"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Альтернативный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button
+                    onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>Нажмите ОК</p>
                 <h3>Для Windows 11</h3>
                 <h5>Для проводного соединения:</h5>
                 <p>Параметры > Сеть и Интернет > Ethernet > Назначение DNS-сервера > Изменить > Вручную</p>
                 <h5>Для WiFi:</h5>
-                <p>Параметры > Сеть и Интернет > Wi-Fi > Свойства [название беспроводной сети] > Назначение DNS-сервера > Изменить > Вручную</p>
+                <p>Параметры > Сеть и Интернет > Wi-Fi > Свойства [название беспроводной сети] > Назначение DNS-сервера
+                    > Изменить > Вручную</p>
                 <p>IPv4: вкл</p>
-                <p>Предпочтительный DNS-сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Предпочтительный DNS-сервер:<code>45.95.233.23</code></p><button
+                    onclick='navigator.clipboard.writeText("45.95.233.23"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>DNS по протоколу HTTPS: Включено (ручной шаблон)</p>
-                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>Дополнительный DNS-сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button
+                    onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный DNS-сервер:<code>64.188.98.242</code></p><button
+                    onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>DNS по протоколу HTTPS: Выключено</p>
                 <p>IPv6: включите, если у вас есть IPv6</p>
-                <p>Предпочтительный DNS-сервер:<code>2a12:5940:cf09::2</code></p><button onclick='navigator.clipboard.writeText("2a12:5940:cf09::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Предпочтительный DNS-сервер:<code>2a05:541:104:7f::1</code></p><button
+                    onclick='navigator.clipboard.writeText("2a05:541:104:7f::1"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>DNS по протоколу HTTPS: Включено (ручной шаблон)</p>
-                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>Дополнительный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Шаблон DNS по протоколу HTTPS:<code>https://dns.malw.link/dns-query</code></p><button
+                    onclick='navigator.clipboard.writeText("https://dns.malw.link/dns-query"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный DNS-сервер:<code>2a01:ecc0:2c1:2::2</code></p><button
+                    onclick='navigator.clipboard.writeText("2a01:ecc0:2c1:2::2"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
                 <p>DNS по протоколу HTTPS: Выключено</p>
             </div>
             <div class="page padding" id=router>
-                <p>Во всех роутерах эта настройка находится в разных местах, поэтому универсальной инструкции быть не может. Поищите настройки DNS в роутере. Скорее всего, они в разделе WAN.</p>
-                <p>DNS 1:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>DNS 2:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Во всех роутерах эта настройка находится в разных местах, поэтому универсальной инструкции быть не
+                    может. Поищите настройки DNS в роутере. Скорее всего, они в разделе WAN.</p>
+                <p>DNS 1:<code>45.95.233.23</code></p><button
+                    onclick='navigator.clipboard.writeText("45.95.233.23"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>DNS 2:<code>64.188.98.242</code></p><button
+                    onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
             </div>
             <div class="page padding" id=xbox>
                 <p>Нажмите кнопку Xbox на контроллере, выберите "Параметры"</p>
                 <p>В разделе "Параметры сети" выберите "Дополнительные настройки"</p>
                 <p>В разделе "Параметры DNS", выберите "Вручную"</p>
-                <p>Основной сервер:<code>46.226.165.53</code></p><button onclick='navigator.clipboard.writeText("46.226.165.53"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
-                <p>Дополнительный сервер:<code>64.188.98.242</code></p><button onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Основной сервер:<code>45.95.233.23</code></p><button
+                    onclick='navigator.clipboard.writeText("45.95.233.23"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
+                <p>Дополнительный сервер:<code>64.188.98.242</code></p><button
+                    onclick='navigator.clipboard.writeText("64.188.98.242"),this.firstChild.textContent="check"'><i>content_copy</i><span>Копировать</span></button>
             </div>
         </main>
     </div>

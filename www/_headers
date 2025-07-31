@@ -1,2 +1,4 @@
 /dns.malw.link.mobileconfig
-  Content-Type: application/x-apple-config-profile
+  Content-Type: application/octet-stream
+/dns.malw.link_cloudflare.mobileconfig
+  Content-Type: application/octet-stream
