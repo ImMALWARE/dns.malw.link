@@ -1,4 +1,5 @@
 ### dns.malw.link: hosts file
+# Последнее обновление: 7 сентября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
@@ -143,6 +144,8 @@
 204.12.192.222 backend.deepl.com
 204.12.192.222 clearance.deepl.com
 204.12.192.222 errortracking.deepl.com
+204.12.192.222 auth.deepl.com
+204.12.192.222 oneshot-free.www.deepl.com
 
 # Deezer
 204.12.192.220 deezer.com
