@@ -146,6 +146,7 @@
             <h2 style="text-align:center">Разблокированные сайты:</h2>
             <ul class="list border">
                 <li><i>check</i><p>Augmentcode</p></li>
+                <li><i>check</i><p>Anthropic API</p></li>
                 <li><i>check</i><p>Bing Rewards</p></li>
                 <li><i>check</i><p>Brawl Stars</p></li>
                 <li><i>check</i><p>Canva</p></li>
@@ -287,11 +288,11 @@
     </div>
     <script>
         function dns_set() {
-            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="https://i.imgur.com/XLLQhgV.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="/img/okak.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
         }
 
         function dns_unset() {
-            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="https://i.imgur.com/1m1vBTj.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="/img/cat.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
         }
         async function test_dns() {
             await fetch('https://test.dns.malw.link/').then(dns_set).catch(dns_unset)
