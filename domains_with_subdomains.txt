@@ -38,3 +38,4 @@ clickup-prod.com
 clickup-sg.com
 clickup.com
 trae.ai
+easydmarc.com
