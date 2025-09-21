@@ -44,3 +44,6 @@ trae-api-sg.mchost.guru
 api.anthropic.com
 auth.anthropic.com
 profile.broadcom.com
+access.broadcom.com
+support.broadcom.com
+knowledge.broadcom.com
