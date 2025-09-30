@@ -1,5 +1,5 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 28 сентября 2025
+# Последнее обновление: 30 сентября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
@@ -14,6 +14,7 @@
 130.255.77.28 ntc.party
 172.64.33.155 rutor.info
 173.245.59.155 rutor.is
+185.87.51.182 controlplane.tailscale.com
 
 # ChatGPT, OpenAI:
 204.12.192.222 chatgpt.com
