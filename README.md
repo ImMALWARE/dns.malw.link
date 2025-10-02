@@ -10,8 +10,19 @@
 
 ## Если вам нужны DNS over HTTPS и DNS over TLS
 
-1. Убедитесь, что домен привязан к IP.
-2. Создайте папку `certs` и положите сертификаты `fullchain.cer` и `key.key`.
+1. Убедитесь, что ваш домен привязан к IP сервера.
+2. Создайте папку `certs` в корне проекта.
+3. Поместите в неё SSL-сертификаты с именами `fullchain.cer` и `key.key`.
+
+   > Можете использовать, например, [acme.sh](https://github.com/acmesh-official/acme.sh) для получения сертификатов.
+
+4. В `nginx.conf` поменяйте домен `dns.malw.link` на ваш домен:
+
+   ```conf
+   map $ssl_preread_server_name $allowed_domain {
+      dns.malw.link 2;
+      include /etc/nginx/whitelist_domains.conf;
+   ```
 
 ## Если вам не нужны DNS over HTTPS и DNS over TLS
 
