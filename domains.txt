@@ -47,3 +47,4 @@ profile.broadcom.com
 access.broadcom.com
 support.broadcom.com
 knowledge.broadcom.com
+eu.posthog.com
