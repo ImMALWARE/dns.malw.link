@@ -49,3 +49,4 @@ access.broadcom.com
 support.broadcom.com
 knowledge.broadcom.com
 eu.posthog.com
+us.posthog.com
