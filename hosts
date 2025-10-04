@@ -183,6 +183,12 @@
 185.246.223.127 s.4pda.to
 185.246.223.127 appbk.4pda.to
 
+# Trae.ai
+185.246.223.127 trae-api-sg.mchost.guru
+185.246.223.127 api.trae.ai
+185.246.223.127 api-sg-central.trae.ai
+185.246.223.127 api16-normal-alisg.mchost.guru
+
 # Другое:
 204.12.192.222 www.notion.so
 50.7.85.222 www.canva.com
