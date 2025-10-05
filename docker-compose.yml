@@ -11,6 +11,10 @@ services:
     restart: unless-stopped
     networks:
       - dns
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
 
   dns:
     image: powerdns/dnsdist-19:latest
