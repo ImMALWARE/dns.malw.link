@@ -9,3 +9,7 @@ services:
     ports:
       - "443:443"
     restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
