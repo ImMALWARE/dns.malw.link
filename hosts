@@ -1,5 +1,5 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 4 октября 2025
+# Последнее обновление: 5 октября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
@@ -116,18 +116,20 @@
 204.12.192.222 api.squareup.com
 204.12.192.222 api-global.squareup.com
 
-# Clash Royale, Clash of Clans, Brawl Stars
-3.160.212.81 cdn.id.supercell.com
-18.172.112.81 security.id.supercell.com
+# Supercell
+185.246.223.127 cdn.id.supercell.com
+185.246.223.127 security.id.supercell.com
 45.95.233.23 accounts.supercell.com
-18.66.195.96 game-assets.clashroyaleapp.com
-179.43.148.190 game.clashroyaleapp.com
-3.162.38.39 game-assets.clashofclans.com
-70.34.251.56 gamea.clashofclans.com
-108.157.194.81 clashofclans.inbox.supercell.com
-179.43.168.109 game.brawlstarsgame.com
-18.239.69.129 game-assets.brawlstarsgame.com
+185.246.223.127 game-assets.clashroyaleapp.com
+185.246.223.127 game-assets.clashofclans.com
+185.246.223.127 clashofclans.inbox.supercell.com
+185.246.223.127 game-assets.brawlstarsgame.com
 204.12.192.222 store.supercell.com
+45.95.233.23 game.clashroyaleapp.com
+64.188.98.242 gamea.clashofclans.com
+185.246.223.127 game.brawlstarsgame.com
+108.61.167.26 game.squadbustersgame.com
+45.95.233.23 game.mocogame.com
 
 # DeepL
 204.12.192.222 deepl.com
