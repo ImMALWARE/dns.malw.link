@@ -2,14 +2,8 @@
 3.66.189.153 mail.proton.me
 52.223.13.41 tracker.openbittorrent.com
 45.95.233.23 test.dns.malw.link
-108.138.199.10 cdn.id.supercell.com
-3.166.14.19 security.id.supercell.com
-18.66.195.96 game-assets.clashroyaleapp.com
-179.43.148.190 game.clashroyaleapp.com
-18.66.195.96 game-assets.clashofclans.com
-70.34.251.56 gamea.clashofclans.com
-108.157.194.81 clashofclans.inbox.supercell.com
-179.43.168.109 game.brawlstarsgame.com
-18.239.69.129 game-assets.brawlstarsgame.com
+45.95.233.23 game.clashroyaleapp.com
+64.188.98.242 gamea.clashofclans.com
+185.246.223.127 game.brawlstarsgame.com
 130.255.77.28 ntc.party
 185.87.51.182 controlplane.tailscale.com
