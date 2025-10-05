@@ -50,3 +50,9 @@ support.broadcom.com
 knowledge.broadcom.com
 eu.posthog.com
 us.posthog.com
+cdn.id.supercell.com
+security.id.supercell.com
+game-assets.clashroyaleapp.com
+game-assets.clashofclans.com
+clashofclans.inbox.supercell.com
+game-assets.brawlstarsgame.com
