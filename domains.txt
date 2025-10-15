@@ -56,3 +56,4 @@ game-assets.clashroyaleapp.com
 game-assets.clashofclans.com
 clashofclans.inbox.supercell.com
 game-assets.brawlstarsgame.com
+gql.twitch.tv
