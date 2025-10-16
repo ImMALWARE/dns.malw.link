@@ -57,3 +57,5 @@ game-assets.clashofclans.com
 clashofclans.inbox.supercell.com
 game-assets.brawlstarsgame.com
 gql.twitch.tv
+api.jetbrains.ai
+account.jetbrains.com
