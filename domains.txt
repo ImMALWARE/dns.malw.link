@@ -59,3 +59,4 @@ game-assets.brawlstarsgame.com
 gql.twitch.tv
 api.jetbrains.ai
 account.jetbrains.com
+robinfrontend-pa.googleapis.com
