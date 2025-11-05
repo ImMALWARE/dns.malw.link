@@ -1,5 +1,5 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 31 октября 2025
+# Последнее обновление: 5 ноября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
@@ -194,6 +194,27 @@
 185.246.223.127 api-sg-central.trae.ai
 185.246.223.127 api16-normal-alisg.mchost.guru
 
+# Linear.app
+185.246.223.127 linear.app
+185.246.223.127 client-api.linear.app
+185.246.223.127 static.linear.app
+185.246.223.127 constellation.linear.app
+185.246.223.127 uploads.linear.app
+185.246.223.127 public.linear.app
+185.246.223.127 s.linear.app
+
+# Windsurf
+185.246.223.127 windsurf.com
+185.246.223.127 codeium.com
+185.246.223.127 server.codeium.com
+185.246.223.127 web-backend.codeium.com
+185.246.223.127 unleash.codeium.com
+185.246.223.127 inference.codeium.com
+185.246.223.127 codeiumdata.com
+185.246.223.127 windsurf-stable.codeium.com
+185.246.223.127 windsurf-telemetry.codeium.com
+185.246.223.127 marketplace.windsurf.com
+
 # Другое:
 185.246.223.127 www.notion.so
 50.7.85.222 www.canva.com
@@ -214,6 +235,7 @@
 45.95.233.23 eu.posthog.com
 185.246.223.127 www.qwant.com
 185.246.223.127 guidedhacking.com
+185.246.223.127 framer.com
 
 # Блокировка реально плохих сайтов
 # Скримеры:
@@ -244,4 +266,6 @@
 0.0.0.0 appmetrica.yandex.ru
 0.0.0.0 mc.yandex.ru
 0.0.0.0 amc.yandex.ru
+0.0.0.0 tigr1234566.github.io
+0.0.0.0 rezvorck.github.io
 ### dns.malw.link: end hosts file
