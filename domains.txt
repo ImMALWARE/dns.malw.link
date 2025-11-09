@@ -60,3 +60,4 @@ www.tiktok.com
 xgpuweb.gssv-play-prod.xboxlive.com
 xgpuwebf2p.gssv-play-prod.xboxlive.com
 xsts.auth.xboxlive.com
+api-v2.soundcloud.com
