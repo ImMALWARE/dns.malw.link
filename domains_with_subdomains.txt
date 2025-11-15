@@ -49,3 +49,5 @@ weather.com
 wikidot.com
 windsurf.com
 x.ai
+patreon.com
+httptoolkit.com
