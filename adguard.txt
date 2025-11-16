@@ -13,17 +13,17 @@ rutor.info^$dnsrewrite=172.64.33.155
 rutor.is^$dnsrewrite=173.245.59.155
 controlplane.tailscale.com^$dnsrewrite=185.87.51.182
 d.rutor.info^$dnsrewrite=172.64.33.155
-
+#
 game.clashroyaleapp.com^$dnsrewrite=45.95.233.23
 gamea.clashofclans.com^$dnsrewrite=64.188.98.242
 game.brawlstarsgame.com^$dnsrewrite=185.246.223.127
 game.squadbustersgame.com^$dnsrewrite=108.61.167.26
 game.mocogame.com^$dnsrewrite=45.95.233.23
-
+#
 alkalimakersuite-pa.clients6.google.com^$dnsrewrite=134.0.118.88
 webchannel-alkalimakersuite-pa.clients6.google.com^$dnsrewrite=134.0.118.88
 aistudio.google.com^$dnsrewrite=134.0.118.88
-
+#
 ||analog.com^$dnsrewrite=185.246.223.127
 ||augmentcode.com^$dnsrewrite=45.95.233.23
 ||canva.com^$dnsrewrite=45.95.233.23
@@ -56,7 +56,7 @@ aistudio.google.com^$dnsrewrite=134.0.118.88
 ||m3u.in^$dnsrewrite=185.246.223.127
 ||manus.im^$dnsrewrite=45.95.233.23
 ||mongodb.com^$dnsrewrite=185.246.223.127
-||notion.so^$dnsrewrite=^$dnsrewrite=45.95.233.23
+||notion.so^$dnsrewrite=45.95.233.23
 ||oaistatic.com^$dnsrewrite=185.246.223.127
 ||oaiusercontent.com^$dnsrewrite=45.95.233.23
 ||openai.com^$dnsrewrite=185.246.223.127
@@ -75,7 +75,7 @@ aistudio.google.com^$dnsrewrite=134.0.118.88
 ||wikidot.com^$dnsrewrite=45.95.233.23
 ||windsurf.com^$dnsrewrite=185.246.223.127
 ||x.ai^$dnsrewrite=45.95.233.23
-
+#
 access.broadcom.com^$dnsrewrite=185.246.223.127
 account.jetbrains.com^$dnsrewrite=45.95.233.23
 accounts.supercell.com^$dnsrewrite=185.246.223.127
@@ -138,7 +138,7 @@ www.tiktok.com^$dnsrewrite=185.246.223.127
 xgpuweb.gssv-play-prod.xboxlive.com^$dnsrewrite=45.95.233.23
 xgpuwebf2p.gssv-play-prod.xboxlive.com^$dnsrewrite=185.246.223.127
 xsts.auth.xboxlive.com^$dnsrewrite=45.95.233.23
-
+#
 only-fans.uk^$dnsrewrite=0.0.0.0
 only-fans.me^$dnsrewrite=0.0.0.0
 onlyfans.wtf^$dnsrewrite=0.0.0.0
