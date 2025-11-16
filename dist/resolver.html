@@ -154,17 +154,37 @@
 
 <body>
     <div>
-        <nav class="m l left"><a href= /><i>home</i><span>Главная</span></a><a href=/setup><i>build</i><span>Настройка</span></a><a class=active href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
-        <nav class="s bottom"><a href= /><i>home</i><span>Главная</span></a><a href=/setup><i>build</i><span>Настройка</span></a><a class=active href=/resolver><i>dns</i><span>Резолвер</span></a><a href=/hosts><i>article</i><span>hosts</span></a><a href=/help><i>help</i><span>Помощь</span></a></nav>
+        <nav class="m l left">
+            <a href= /><i>home</i><span>Главная</span></a>
+            <a href=/setup><i>build</i><span>Настройка</span></a>
+            <a class=active href=/resolver><i>dns</i><span>Резолвер</span></a>
+            <a href=/hosts><i>article</i><span>hosts</span></a>
+            <a href=/help><i>help</i><span>Помощь</span></a>
+        </nav>
+        <nav class="s bottom">
+            <a href= /><i>home</i><span>Главная</span></a>
+            <a href=/setup><i>build</i><span>Настройка</span></a>
+            <a class=active href=/resolver><i>dns</i><span>Резолвер</span></a>
+            <a href=/hosts><i>article</i><span>hosts</span></a>
+            <a href=/help><i>help</i><span>Помощь</span></a>
+        </nav>
         <main class=responsive>
             <div style=display:flex;justify-content:center;gap:15px;align-items:flex-end>
-                <div id=q_div class="field label border"><input id=q type=text placeholder=" "><label>Запрос</label><span class=error style=display:none>Обязательное поле</span></div>
-                <div class="field label suffix border"><select id=s style=cursor:default>
+                <div id=q_div class="field label border"><input id=q type=text placeholder=" ">
+                    <label>Запрос</label>
+                    <span class=error style=display:none>Обязательное поле</span>
+                </div>
+                <div class="field label suffix border">
+                    <select id=s style=cursor:default>
                         <option>Cloudflare</option>
                         <option>Google DNS</option>
                         <option>dns.malw.link</option>
                         <option>OpenNIC</option>
-                    </select><label>DNS-сервер</label><i>arrow_drop_down</i></div><button onclick=dns() id=dns_button style=align-self:flex-start;margin-top:20px><i>search</i></button>
+                    </select>
+                    <label>DNS-сервер</label>
+                    <i>arrow_drop_down</i>
+                </div>
+                <button onclick=dns() id=dns_button style=align-self:flex-start;margin-top:20px><i>search</i></button>
             </div>
             <article class=border id=dns_test>
                 <table>

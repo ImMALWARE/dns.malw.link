@@ -93,9 +93,19 @@
 
 <body>
     <div>
-        <nav class="m l left"><a class="active" href="/"><i>home</i><span>Главная</span></a><a href="/setup"><i>build</i><span>Настройка</span></a><a href="/resolver"><i>dns</i><span>Резолвер</span></a><a href="/hosts"><i>article</i><span>hosts</span></a><a href="/help"><i>help</i><span>Помощь</span></a>
+        <nav class="m l left">
+            <a class="active" href="/"><i>home</i><span>Главная</span></a>
+            <a href="/setup"><i>build</i><span>Настройка</span></a>
+            <a href="/resolver"><i>dns</i><span>Резолвер</span></a>
+            <a href="/hosts"><i>article</i><span>hosts</span></a>
+            <a href="/help"><i>help</i><span>Помощь</span></a>
         </nav>
-        <nav class="s bottom"><a class="active" href="/"><i>home</i><span>Главная</span></a><a href="/setup"><i>build</i><span>Настройка</span></a><a href="/resolver"><i>dns</i><span>Резолвер</span></a><a href="/hosts"><i>article</i><span>hosts</span></a><a href="/help"><i>help</i><span>Помощь</span></a>
+        <nav class="s bottom">
+            <a class="active" href="/"><i>home</i><span>Главная</span></a>
+            <a href="/setup"><i>build</i><span>Настройка</span></a>
+            <a href="/resolver"><i>dns</i><span>Резолвер</span></a>
+            <a href="/hosts"><i>article</i><span>hosts</span></a>
+            <a href="/help"><i>help</i><span>Помощь</span></a>
         </nav>
         <main class="responsive">
             <h1 class="title">dns.malw.link</h1>
@@ -108,42 +118,44 @@
                     <p>IPv6 DNS 2:<code>2a01:ecc0:2c1:2::2</code></p>
                     <p>DNS over TLS:<code>dns.malw.link</code></p>
                     <p>DNS over HTTPS:<code>https://dns.malw.link/dns-query</code></p>
-                    <p>DNSCrypt
-                        stamp:<code>sdns://AgIAAAAAAAAADTg0LjIxLjE4OS4xMzMADWRucy5tYWx3LmxpbmsKL2Rucy1xdWVyeQ</code></p>
+                    <p>DNSCrypt stamp:<code>sdns://AgIAAAAAAAAADTg0LjIxLjE4OS4xMzMADWRucy5tYWx3LmxpbmsKL2Rucy1xdWVyeQ</code></p>
                 </div>
-                <div style="text-align:center;margin-top:16px"><a class="button" href="/setup"><i>build</i><span>Как
-                            настроить?</span></a></div>
+                <div style="text-align:center;margin-top:16px">
+                    <a class="button" href="/setup"><i>build</i><span>Как настроить?</span></a>
+                </div>
             </article>
             <article class="border" style="user-select:text">
                 <div style="text-align:center">
                     <h6>Альтернатива: DNS на Cloudflare Gateway</h6>
                     <ul class="list border">
-          <li>
-            <i>thumb_up</i>
-            <p>Тот же dns.malw.link на серверах Cloudflare</p>
-          </li>
-          <li>
-            <i>thumb_up</i>
-            <p>Значительно быстрее и стабильнее</p>
-          </li>
-          <li>
-            <i>thumb_down</i>
-            <p>Только DNS over HTTPS и DNS over TLS (можно установить только в Chrome, Firefox, Android, iOS/macOS)</p>
-          </li>
-          <li>
-            <i>thumb_down</i>
-            <p>Cloudflare блокируется некоторыми провайдерами</p>
-          </li>
-        </ul>
+                        <li>
+                            <i>thumb_up</i>
+                            <p>Тот же dns.malw.link на серверах Cloudflare</p>
+                        </li>
+                        <li>
+                            <i>thumb_up</i>
+                            <p>Значительно быстрее и стабильнее</p>
+                        </li>
+                        <li>
+                            <i>thumb_down</i>
+                            <p>Только DNS over HTTPS и DNS over TLS (можно установить только в Chrome, Firefox, Android, iOS/macOS)</p>
+                        </li>
+                        <li>
+                            <i>thumb_down</i>
+                            <p>Cloudflare блокируется некоторыми провайдерами</p>
+                        </li>
+                    </ul>
                     <p>DNS over TLS:<code>5u35p8m9i7.cloudflare-gateway.com</code></p>
                     <p>DNS over HTTPS:<code>https://5u35p8m9i7.cloudflare-gateway.com/dns-query</code></p>
                 </div>
-                <div style="text-align:center;margin-top:16px"><a class="button" href="/setup/cloudflare"><i>build</i><span>Как настроить?</span></a></div>
+                <div style="text-align:center;margin-top:16px">
+                    <a class="button" href="/setup/cloudflare"><i>build</i><span>Как настроить?</span></a>
+                </div>
             </article>
             <article class="border" id="dns_test">
-                <div style="display:flex;align-items:center;justify-content:center;gap:12px"><progress class="circle small"></progress>
-                    <p style="margin:0;line-height:1;transform:translateY(2px);font-size:1rem">Проверка использования
-                        dns.malw.link</p>
+                <div style="display:flex;align-items:center;justify-content:center;gap:12px">
+                    <progress class="circle small"></progress>
+                    <p style="margin:0;line-height:1;transform:translateY(2px);font-size:1rem">Проверка использования dns.malw.link</p>
                 </div>
             </article>
             <h2 style="text-align:center">Разблокированные сайты:</h2>
@@ -300,15 +312,16 @@
         </main>
     </div>
     <script>
-        function dns_set() {
-            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="/img/okak.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
-        }
-
-        function dns_unset() {
-            document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="/img/cat.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
-        }
         async function test_dns() {
-            await fetch('https://test.dns.malw.link/').then(dns_set).catch(dns_unset)
+            await fetch('https://test.dns.malw.link/').then(
+                () => {
+                    document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>check</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link настроен!</p></div><img src="/img/okak.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+                }
+            ).catch(
+                () => {
+                    document.getElementById('dns_test').innerHTML = '<div style="display: flex; align-items: center; justify-content: center; gap: 12px;"><i>close</i><p style="margin: 0; line-height: 1; transform: translateY(2px); font-size: 1rem">dns.malw.link не настроен!</p></div><img src="/img/cat.gif" referrerpolicy="no-referrer" style="align-items: center; width: 250px; margin: 20px auto; display: block;">';
+                }
+            )
         }
         test_dns()
     </script>

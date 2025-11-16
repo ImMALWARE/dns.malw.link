@@ -23,28 +23,27 @@
       gtag('js', new Date());
       gtag('config', 'G-0CCV7SLXDY');
 
-      function hosts(type) {
-        if (type == 1) {
-          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts').then(resp => resp.blob()).then(text => {
-            const blob = new Blob([text], {
-              type: "application/octet-stream"
-            });
+     async function hosts(type) {
+        const url = 'https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts';
+
+        try {
+          const resp = await fetch(url);
+          if (!resp.ok) throw new Error('Проверьте соединение с GitHub');
+
+          if (type === 1) {
             const a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
+            a.href = URL.createObjectURL(await resp.blob());
             a.download = "hosts";
             document.body.appendChild(a);
             a.click();
             a.remove();
             URL.revokeObjectURL(a.href);
-          }).catch(err => alert("Ошибка при загрузке файла: " + err));
-        } else {
-          fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts').then(response => {
-            if (!response.ok) throw new Error('Проверьте соединение с GitHub');
-            return response.text();
-          }).then(text => {
-            navigator.clipboard.writeText(text);
+          } else {
+            await navigator.clipboard.writeText(await resp.text());
             document.getElementById('copy_icon').textContent = 'check';
-          })
+          }
+        } catch (err) {
+          alert(err);
         }
       }
 
@@ -204,6 +203,9 @@
             <span>Копировать содержимое актуального hosts файла</span>
           </button>
         </div>
+        <div id="update_date">
+          <div class="shape loading-indicator extra" style="margin: 15px auto"></div>
+        </div>
         <h3 style=text-align:center>Где он находится и как его заменить?</h3>
         <nav class=tabbed>
           <a class="active tab" onclick="open_tab('windows',this)">
@@ -296,8 +298,24 @@
           </ol>
           <p>Либо же удерживайте hosts -> Открыть как -> Текст -> Totalcmd Editor. Вставьте скопированное содержимое и сохраните</p>
         </div>
-      </h5>
       </main>
     </div>
+    <script>
+    (async () => {
+      let update_text;
+      try {
+        const res = await fetch('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts');
+        const text = await res.text();
+        const match = text.match(/^# Последнее обновление:\s*(.*)$/m);
+        if (!match) throw new Error('Ошибка проверки даты обновления');
+        update_text = 'Последнее обновление: ' + match[1];
+      } catch (err) {
+        update_text = err;
+      }
+
+      document.getElementById('update_date').innerHTML =
+        `<p style="text-align:center; margin-top:25px">${update_text}</p>`;
+    })();
+    </script>
   </body>
 </html>
