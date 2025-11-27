@@ -1,15 +1,11 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 26 ноября 2025
+# Последнее обновление: 27 ноября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
 157.240.245.174 b.i.instagram.com
 157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
 157.240.245.174 help.instagram.com
-3.66.189.153 protonmail.com
-3.66.189.153 mail.proton.me
-64.233.164.198 yt3.ggpht.com
-64.233.164.132 yt4.ggpht.com
 52.223.13.41 tracker.openbittorrent.com
 130.255.77.28 ntc.party
 172.64.33.155 rutor.info
@@ -203,6 +199,16 @@
 185.246.223.127 windsurf-telemetry.codeium.com
 185.246.223.127 marketplace.windsurf.com
 
+# Proton
+45.95.233.23 proton.me
+45.95.233.23 account.proton.me
+45.95.233.23 mail.proton.me
+45.95.233.23 account-api.proton.me
+
+# Twitch
+45.95.233.23 usher.ttvnw.net
+185.246.223.127 gql.twitch.tv
+
 # Другое:
 185.246.223.127 www.notion.so
 50.7.85.222 www.canva.com
@@ -216,7 +222,6 @@
 185.246.223.127 api.imgur.com
 45.95.233.23 www.dyson.com
 45.95.233.23 www.dyson.fr
-45.95.233.23 usher.ttvnw.net
 64.188.98.242 api.manus.im
 185.246.223.127 profile.broadcom.com
 45.95.233.23 test.dns.malw.link
