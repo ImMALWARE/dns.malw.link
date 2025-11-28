@@ -22,13 +22,6 @@
         }
         gtag('js', new Date());
         gtag('config', 'G-0CCV7SLXDY');
-
-        function open_tab(tab, el) {
-            document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
-            document.querySelectorAll('.page').forEach(e => e.classList.remove('active'));
-            el.classList.add('active');
-            document.getElementById(tab).classList.add('active')
-        }
     </script>
     <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
     <style>
@@ -115,9 +108,9 @@
                 </div>
             </article>
             <nav class=tabbed>
-                <a class="active tab" onclick='open_tab("browser",this)'><i>globe</i><span>Браузер на ПК</span></a>
-                <a onclick='open_tab("android",this)' class=tab><i class="fa-brands fa-android"></i><span>Android</span></a>
-                <a onclick='open_tab("ios",this)' class=tab><i class="fa-brands fa-apple"></i><span>iOS/macOS</span></a>
+                <a class="active tab" data-ui="#browser"><i>globe</i><span>Браузер на ПК</span></a>
+                <a class=tab data-ui="#android"><i class="fa-brands fa-android"></i><span>Android</span></a>
+                <a class=tab data-ui="#ios"><i class="fa-brands fa-apple"></i><span>iOS/macOS</span></a>
             </nav>
             <div class="page padding active" id=browser>
                 <h3>На Chrome/Edge/Vivaldi/Brave/Opera и т.д.</h3>

@@ -46,13 +46,6 @@
           alert(err);
         }
       }
-
-      function open_tab(tab, el) {
-        document.querySelectorAll('.tab').forEach(e => e.classList.remove('active'));
-        document.querySelectorAll('.page').forEach(e => e.classList.remove('active'));
-        el.classList.add('active');
-        document.getElementById(tab).classList.add('active')
-      }
     </script>
     <style>
       @font-face {
@@ -208,19 +201,19 @@
         </div>
         <h3 style=text-align:center>Где он находится и как его заменить?</h3>
         <nav class=tabbed>
-          <a class="active tab" onclick="open_tab('windows',this)">
+          <a class="active tab" data-ui="#windows">
             <i class="fa-brands fa-windows"></i>
             <span>Windows</span>
           </a>
-          <a onclick="open_tab('macos',this)" class=tab>
+          <a class=tab data-ui="#macos">
             <i class="fa-brands fa-apple"></i>
             <span>macOS</span>
           </a>
-          <a onclick="open_tab('linux',this)" class=tab>
+          <a class=tab data-ui="#linux">
             <i class="fa-brands fa-linux"></i>
             <span>Linux</span>
           </a>
-          <a onclick="open_tab('android',this)" class=tab>
+          <a class=tab data-ui="#android">
             <i>android</i>
             <span>Android (с root)</span>
           </a>
