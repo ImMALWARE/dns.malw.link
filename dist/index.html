@@ -92,6 +92,11 @@
 </head>
 
 <body>
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.body.classList.add('dark');
+        }
+    </script>
     <div>
         <nav class="m l left">
             <a class="active" href="/"><i>home</i><span>Главная</span></a>
