@@ -20,9 +20,9 @@
 |game.squadbustersgame.com^$dnsrewrite=108.61.167.26
 |game.mocogame.com^$dnsrewrite=45.95.233.23
 #
-|alkalimakersuite-pa.clients6.google.com^$dnsrewrite=134.0.118.88
-|webchannel-alkalimakersuite-pa.clients6.google.com^$dnsrewrite=134.0.118.88
-|aistudio.google.com^$dnsrewrite=134.0.118.88
+|alkalimakersuite-pa.clients6.google.com^$dnsrewrite=158.255.3.181
+|webchannel-alkalimakersuite-pa.clients6.google.com^$dnsrewrite=158.255.3.181
+|aistudio.google.com^$dnsrewrite=158.255.3.181
 #
 ||analog.com^$dnsrewrite=185.246.223.127
 ||augmentcode.com^$dnsrewrite=45.95.233.23

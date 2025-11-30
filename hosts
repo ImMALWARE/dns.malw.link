@@ -1,5 +1,5 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 27 ноября 2025
+# Последнее обновление: 30 ноября 2025
 # Дополнение к zapret:
 157.240.245.174 instagram.com
 157.240.245.174 www.instagram.com
@@ -34,15 +34,15 @@
 
 # Сервисы Google:
 185.246.223.127 gemini.google.com
-134.0.118.88 aistudio.google.com
-134.0.118.88 generativelanguage.googleapis.com
+158.255.3.181 aistudio.google.com
+158.255.3.181 generativelanguage.googleapis.com
 185.246.223.127 aitestkitchen.withgoogle.com
-134.0.118.88 aisandbox-pa.googleapis.com
-134.0.118.88 webchannel-alkalimakersuite-pa.clients6.google.com
-134.0.118.88 alkalimakersuite-pa.clients6.google.com
-134.0.118.88 assistant-s3-pa.googleapis.com
-134.0.118.88 proactivebackend-pa.googleapis.com
-134.0.118.88 robinfrontend-pa.googleapis.com
+158.255.3.181 aisandbox-pa.googleapis.com
+158.255.3.181 webchannel-alkalimakersuite-pa.clients6.google.com
+158.255.3.181 alkalimakersuite-pa.clients6.google.com
+158.255.3.181 assistant-s3-pa.googleapis.com
+158.255.3.181 proactivebackend-pa.googleapis.com
+158.255.3.181 robinfrontend-pa.googleapis.com
 185.246.223.127 o.pki.goog
 185.246.223.127 labs.google
 185.246.223.127 notebooklm.google
