@@ -1,5 +1,3 @@
-3.66.189.153 protonmail.com
-3.66.189.153 mail.proton.me
 52.223.13.41 tracker.openbittorrent.com
 45.95.233.23 test.dns.malw.link
 130.255.77.28 ntc.party
