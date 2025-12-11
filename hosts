@@ -1,11 +1,6 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 30 ноября 2025
+# Последнее обновление: 11 декабря 2025
 # Дополнение к zapret:
-157.240.245.174 instagram.com
-157.240.245.174 www.instagram.com
-157.240.245.174 b.i.instagram.com
-157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
-157.240.245.174 help.instagram.com
 52.223.13.41 tracker.openbittorrent.com
 130.255.77.28 ntc.party
 172.64.33.155 rutor.info
@@ -31,6 +26,7 @@
 185.246.223.127 sora.com
 185.246.223.127 videos.openai.com
 185.246.223.127 ios.chat.openai.com
+185.246.223.127 us.posthog.com
 
 # Сервисы Google:
 185.246.223.127 gemini.google.com
@@ -74,6 +70,11 @@
 185.246.223.127 www.spotify.com
 185.246.223.127 accounts.spotify.com
 185.246.223.127 open.spotify.com
+109.69.21.35 accounts.scdn.co
+109.69.21.35 gew1-dealer.spotify.com
+109.69.21.35 open-exp.spotifycdn.com
+109.69.21.35 spotifycdn.com
+109.69.21.35 www-growth.scdn.co
 
 # GitHub Copilot:
 185.246.223.127 api.github.com
@@ -149,6 +150,8 @@
 185.246.223.127 errortracking.deepl.com
 185.246.223.127 auth.deepl.com
 185.246.223.127 oneshot-free.www.deepl.com
+109.69.21.35 checkout.www.deepl.com
+109.69.21.35 gtm.deepl.com
 
 # Deezer
 185.246.223.127 deezer.com
@@ -176,7 +179,6 @@
 185.246.223.127 trae-api-sg.mchost.guru
 185.246.223.127 api.trae.ai
 185.246.223.127 api-sg-central.trae.ai
-185.246.223.127 api16-normal-alisg.mchost.guru
 
 # Linear.app
 185.246.223.127 linear.app
@@ -209,13 +211,47 @@
 45.95.233.23 usher.ttvnw.net
 185.246.223.127 gql.twitch.tv
 
+# Netflix:
+158.255.0.189   netflix.com
+158.255.0.189   www.netflix.com
+
+# Instagram/Facebook/Threads:
+31.13.72.12 external-hel3-1.xx.fbcdn.net
+157.240.224.63 scontent-hel3-1.cdninstagram.com
+31.13.72.12 scontent-hel3-1.xx.fbcdn.net
+157.240.224.63 scontent.cdninstagram.com
+31.13.72.53 static.cdninstagram.com
+31.13.72.12 static.xx.fbcdn.net
+157.240.224.63 threads.com
+157.240.224.63 www.threads.com
+157.240.245.174 instagram.com
+157.240.245.174 www.instagram.com
+157.240.245.174 b.i.instagram.com
+157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
+157.240.245.174 help.instagram.com
+
+# SoundCloud:
+3.164.206.34    a-v2.sndcdn.com
+18.165.140.56   secure.sndcdn.com
+18.238.243.27   soundcloud.com
+13.224.222.71   style.sndcdn.com
+
+# Manus:
+109.69.21.35    files.manuscdn.com
+109.69.21.35    manus.im
+109.69.21.35    manuscdn.com
+
+# Pixabay:
+94.183.233.72   cdn.pixabay.com
+94.183.233.72   pixabay.com
+
 # Другое:
 185.246.223.127 www.notion.so
 50.7.85.222 www.canva.com
 185.246.223.127 www.intel.com
 185.246.223.127 www.dell.com
-50.7.85.219 www.tiktok.com # Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
-142.54.189.106 web.archive.org # Блокирует от российских IP некоторые сайты
+50.7.85.219 www.tiktok.com
+142.54.189.106 web.archive.org
 185.246.223.127 developer.nvidia.com
 107.150.34.99 builds.parsec.app
 185.246.223.127 tria.ge
@@ -229,6 +265,25 @@
 185.246.223.127 www.qwant.com
 185.246.223.127 guidedhacking.com
 185.246.223.127 framer.com
+50.7.85.222 calendar.notion.so
+94.183.233.72 content-management-files.canva.com
+94.183.233.72 mcs-sg.tiktok.com
+94.183.233.72 mon.tiktokv.com
+94.183.233.72 static.canva.com
+94.131.119.85   accounts.autodesk.com
+172.67.192.246  anilib.me
+94.131.119.85   autodesk.com
+94.183.233.72   frontend-api-v3.pump.fun
+2.22.31.233     hulu.com
+94.183.233.72   images.pump.fun
+104.21.24.110   info.dns.malw.link
+3.66.189.153    protonmail.com
+94.183.233.72   pump.fun
+204.12.192.221  static-assets-1.truthsocial.com
+94.183.233.72   swap-api.pump.fun
+204.12.192.221  truthsocial.com
+94.183.233.72   www.elgato.com
+2.19.183.66     www.hulu.com
 
 # Блокировка реально плохих сайтов
 # Скримеры:
@@ -261,4 +316,5 @@
 0.0.0.0 amc.yandex.ru
 0.0.0.0 tigr1234566.github.io
 0.0.0.0 rezvorck.github.io
+
 ### dns.malw.link: end hosts file
