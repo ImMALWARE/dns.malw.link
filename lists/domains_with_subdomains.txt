@@ -24,6 +24,7 @@ githubcopilot.com
 grok.com
 grokusercontent.com
 guidedhacking.com
+httptoolkit.com
 hume.ai
 hybrid-analysis.com
 linear.app
@@ -34,11 +35,14 @@ notion.so
 oaistatic.com
 oaiusercontent.com
 openai.com
-pixabay.com
+patreon.com
+pump.fun
 qwant.com
+scdn.co
 snapeda.com
 sora.com
 spotify.com
+spotifycdn.com
 strava.com
 temp-number.org
 ti.com
@@ -49,6 +53,3 @@ weather.com
 wikidot.com
 windsurf.com
 x.ai
-patreon.com
-httptoolkit.com
-proton.me

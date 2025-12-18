@@ -1,0 +1,17 @@
+services:
+  sni-proxy:
+    image: nginx:alpine
+    container_name: sni_proxy
+    network_mode: "host"
+    env_file:
+      - ../.env
+    volumes:
+      - ../lists/custom.txt:/etc/nginx/lists/custom.txt:ro
+      - ../lists/domains.txt:/etc/nginx/lists/domains.txt:ro
+      - ../lists/domains_with_subdomains.txt:/etc/nginx/lists/domains_with_subdomains.txt:ro
+      - ./entrypoint.sh:/entrypoint.sh:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf.template:ro
+      - ../lists/banned_ips.txt:/etc/nginx/lists/banned_ips.txt:ro
+
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
+    restart: unless-stopped

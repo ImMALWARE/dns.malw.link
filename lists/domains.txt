@@ -4,6 +4,7 @@ accounts.supercell.com
 afcs.dellcdn.com
 aisandbox-pa.googleapis.com
 aitestkitchen.withgoogle.com
+api-v2.soundcloud.com
 api.anthropic.com
 api.fitbit.com
 api.github.com
@@ -55,12 +56,9 @@ us.posthog.com
 usher.ttvnw.net
 web.archive.org
 www.dell.com
+www.elgato.com
 www.intel.com
 www.tiktok.com
 xgpuweb.gssv-play-prod.xboxlive.com
 xgpuwebf2p.gssv-play-prod.xboxlive.com
 xsts.auth.xboxlive.com
-api-v2.soundcloud.com
-aistudio.google.com
-webchannel-alkalimakersuite-pa.clients6.google.com
-alkalimakersuite-pa.clients6.google.com

@@ -1,0 +1,371 @@
+[
+    {
+        "section": "OpenAI",
+        "domains": [
+            "chatgpt.com",
+            "ab.chatgpt.com",
+            "auth.openai.com",
+            "auth0.openai.com",
+            "platform.openai.com",
+            "cdn.oaistatic.com",
+            "files.oaiusercontent.com",
+            "cdn.auth0.com",
+            "tcr9i.chat.openai.com",
+            "webrtc.chatgpt.com",
+            "android.chat.openai.com",
+            "api.openai.com",
+            "operator.chatgpt.com",
+            "sora.chatgpt.com",
+            "sora.com",
+            "videos.openai.com",
+            "ios.chat.openai.com"
+        ]
+    },
+    {
+        "section": "Google",
+        "domains": [
+            "gemini.google.com",
+            "aistudio.google.com",
+            "generativelanguage.googleapis.com",
+            "aitestkitchen.withgoogle.com",
+            "aisandbox-pa.googleapis.com",
+            "webchannel-alkalimakersuite-pa.clients6.google.com",
+            "alkalimakersuite-pa.clients6.google.com",
+            "assistant-s3-pa.googleapis.com",
+            "proactivebackend-pa.googleapis.com",
+            "robinfrontend-pa.googleapis.com",
+            "o.pki.goog",
+            "labs.google",
+            "notebooklm.google.com",
+            "jules.google.com",
+            "stitch.withgoogle.com"
+        ]
+    },
+    {
+        "section": "Microsoft",
+        "domains": [
+            "copilot.microsoft.com",
+            "sydney.bing.com",
+            "edgeservices.bing.com",
+            "rewards.bing.com",
+            "xsts.auth.xboxlive.com",
+            "xgpuwebf2p.gssv-play-prod.xboxlive.com",
+            "xgpuweb.gssv-play-prod.xboxlive.com"
+        ]
+    },
+    {
+        "section": "Spotify",
+        "domains": [
+            "api.spotify.com",
+            "login5.spotify.com",
+            "encore.scdn.co",
+            "gew1-spclient.spotify.com",
+            "spclient.wg.spotify.com",
+            "api-partner.spotify.com",
+            "aet.spotify.com",
+            "www.spotify.com",
+            "accounts.spotify.com",
+            "open.spotify.com",
+            "accounts.scdn.co",
+            "gew1-dealer.spotify.com",
+            "open-exp.spotifycdn.com",
+            "www-growth.scdn.co"
+        ]
+    },
+    {
+        "section": "GitHub Copilot",
+        "domains": [
+            "api.github.com",
+            "api.individual.githubcopilot.com",
+            "proxy.individual.githubcopilot.com"
+        ]
+    },
+    {
+        "section": "JetBrains",
+        "domains": [
+            "datalore.jetbrains.com",
+            "plugins.jetbrains.com",
+            "download.jetbrains.com",
+            "api.jetbrains.ai",
+            "account.jetbrains.com"
+        ]
+    },
+    {
+        "section": "ElevenLabs",
+        "domains": [
+            "elevenlabs.io",
+            "api.us.elevenlabs.io",
+            "elevenreader.io",
+            "api.elevenlabs.io",
+            "help.elevenlabs.io"
+        ]
+    },
+    {
+        "section": "Grok",
+        "domains": [
+            "grok.com",
+            "accounts.x.ai",
+            "assets.grok.com"
+        ]
+    },
+    {
+        "section": "Tidal",
+        "domains": [
+            "api.tidal.com",
+            "listen.tidal.com",
+            "login.tidal.com",
+            "auth.tidal.com",
+            "link.tidal.com",
+            "dd.tidal.com",
+            "resources.tidal.com",
+            "images.tidal.com",
+            "fsu.fa.tidal.com",
+            "geolocation.onetrust.com",
+            "api.squareup.com",
+            "api-global.squareup.com"
+        ]
+    },
+    {
+        "section": "Supercell",
+        "domains": [
+            "cdn.id.supercell.com",
+            "security.id.supercell.com",
+            "accounts.supercell.com",
+            "game-assets.clashroyaleapp.com",
+            "game-assets.clashofclans.com",
+            "clashofclans.inbox.supercell.com",
+            "game-assets.brawlstarsgame.com",
+            "store.supercell.com"
+        ]
+    },
+    {
+        "section": "DeepL",
+        "domains": [
+            "deepl.com",
+            "www.deepl.com",
+            "www2.deepl.com",
+            "login-wall.deepl.com",
+            "w.deepl.com",
+            "s.deepl.com",
+            "dict.deepl.com",
+            "ita-free.www.deepl.com",
+            "write-free.www.deepl.com",
+            "experimentation.deepl.com",
+            "experimentation-grpc.deepl.com",
+            "ita-free.app.deepl.com",
+            "shield.deepl.com",
+            "ott.deepl.com",
+            "api-free.deepl.com",
+            "backend.deepl.com",
+            "clearance.deepl.com",
+            "errortracking.deepl.com",
+            "auth.deepl.com",
+            "oneshot-free.www.deepl.com",
+            "checkout.www.deepl.com",
+            "gtm.deepl.com"
+        ]
+    },
+    {
+        "section": "Deezer",
+        "domains": [
+            "deezer.com",
+            "www.deezer.com",
+            "payment.deezer.com"
+        ]
+    },
+    {
+        "section": "Weather.com",
+        "domains": [
+            "weather.com",
+            "upsx.weather.com"
+        ]
+    },
+    {
+        "section": "Fitbit",
+        "domains": [
+            "api.fitbit.com",
+            "fitbit-pa.googleapis.com",
+            "fitbitvestibuleshim-pa.googleapis.com",
+            "fitbit.google.com"
+        ]
+    },
+    {
+        "section": "Claude",
+        "domains": [
+            "claude.ai",
+            "console.anthropic.com",
+            "api.anthropic.com"
+        ]
+    },
+    {
+        "section": "Trae.ai",
+        "domains": [
+            "trae-api-sg.mchost.guru",
+            "api.trae.ai",
+            "api-sg-central.trae.ai",
+            "api16-normal-alisg.mchost.guru"
+        ]
+    },
+    {
+        "section": "Linear.app",
+        "domains": [
+            "linear.app",
+            "client-api.linear.app",
+            "static.linear.app",
+            "constellation.linear.app",
+            "uploads.linear.app",
+            "public.linear.app",
+            "s.linear.app"
+        ]
+    },
+    {
+        "section": "Windsurf",
+        "domains": [
+            "windsurf.com",
+            "codeium.com",
+            "server.codeium.com",
+            "web-backend.codeium.com",
+            "unleash.codeium.com",
+            "inference.codeium.com",
+            "windsurf-stable.codeium.com",
+            "windsurf-telemetry.codeium.com",
+            "marketplace.windsurf.com"
+        ]
+    },
+    {
+        "section": "Twitch",
+        "domains": [
+            "usher.ttvnw.net",
+            "gql.twitch.tv"
+        ]
+    },
+    {
+        "section": "Manus",
+        "domains": [
+            "manus.im",
+            "api.manus.im"
+        ]
+    },
+    {
+        "section": "Notion",
+        "domains": [
+            "www.notion.so",
+            "calendar.notion.so"
+        ]
+    },
+    {
+        "section": "Canva",
+        "domains": [
+            "www.canva.com",
+            "content-management-files.canva.com",
+            "static.canva.com"
+        ]
+    },
+    {
+        "section": "Intel",
+        "domains": [
+            "www.intel.com"
+        ]
+    },
+    {
+        "section": "Dell",
+        "domains": [
+            "www.dell.com"
+        ]
+    },
+    {
+        "section": "TikTok",
+        "domains": [
+            "www.tiktok.com"
+        ]
+    },
+    {
+        "section": "Archive.org",
+        "domains": [
+            "web.archive.org"
+        ]
+    },
+    {
+        "section": "NVIDIA",
+        "domains": [
+            "developer.nvidia.com"
+        ]
+    },
+    {
+        "section": "Parsec",
+        "domains": [
+            "builds.parsec.app"
+        ]
+    },
+    {
+        "section": "Tria.ge",
+        "domains": [
+            "tria.ge"
+        ]
+    },
+    {
+        "section": "Qwant",
+        "domains": [
+            "www.qwant.com"
+        ]
+    },
+    {
+        "section": "guidedhacking.com",
+        "domains": [
+            "guidedhacking.com"
+        ]
+    },
+    {
+        "section": "Framer",
+        "domains": [
+            "framer.com"
+        ]
+    },
+    {
+        "section": "Autodesk",
+        "domains": [
+            "accounts.autodesk.com",
+            "www.autodesk.com"
+        ]
+    },
+    {
+        "section": "Pump.fun",
+        "domains": [
+            "pump.fun",
+            "frontend-api-v3.pump.fun",
+            "images.pump.fun",
+            "swap-api.pump.fun"
+
+        ]
+    },
+    {
+        "section": "Truth Social",
+        "domains": [
+            "truthsocial.com",
+            "static-assets-1.truthsocial.com"
+        ]
+    },
+    {
+        "section": "Elgato",
+        "domains": [
+            "www.elgato.com"
+        ]
+    },
+    {
+        "section": "Imgur",
+        "domains": "api.imgur.com"
+    },
+    {
+        "section": "Dyson",
+        "domains": [
+            "www.dyson.com",
+            "www.dyson.fr"
+        ]
+    },
+    {
+        "section": "Broadcom",
+        "domains": [
+            "profile.broadcom.com"
+        ]
+    }
+]

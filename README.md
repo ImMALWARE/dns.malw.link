@@ -1,187 +1,39 @@
-# dns.malw\.link
+# dns.malw.link
 
-Здесь 5 веток:
+## Вся информация для пользователей тут: https://info.dns.malw.link
 
-1. [master](https://github.com/ImMALWARE/dns.malw.link/tree/master) — описание, файл hosts, mobileconfig
-2. [dns-server](https://github.com/ImMALWARE/dns.malw.link/tree/dns-server) — DNS сервер
-3. [sni-proxy](https://github.com/ImMALWARE/dns.malw.link/tree/sni-proxy) — SNI Proxy
-4. [dns-and-sni-proxy](https://github.com/ImMALWARE/dns.malw.link/tree/dns-and-sni-proxy) — DNS сервер и SNI Proxy для установки на единственный сервер
-5. [web](https://github.com/ImMALWARE/dns.malw.link/tree/web) — Веб-страницы ([info.dns.malw.link](https://info.dns.malw.link))
+DNS и SNI Proxy обходят блокировки IP-адресов от самих сервисов. Блокировки РКН обходить они не имеют возможности, потому что РКН блокирует сайты по [SNI](https://ru.wikipedia.org/wiki/Server_Name_Indication). IP-блокировки РКН эта система обойти сможет, но их уже почти не встретишь.
 
----
-
-# Запуск DNS и SNI Proxy на одном сервере
-
-1. Убедитесь, что у вас установлен Docker и Docker Compose. Если не знаете как — спросите у ChatGPT.
-2. Клонируйте репозиторий:
-
+## Установка на свой сервер
+Требуется хоть какое-то базовое знание Linux и командной строки.
+1. Склонируйте репозиторий:
    ```bash
-   git clone --single-branch -b dns-and-sni-proxy https://github.com/ImMALWARE/dns.malw.link
-   cd dns.malw.link
+   git clone https://github.com/ImMALWARE/dns.malw.link
    ```
 
-## Если вам нужны DNS over HTTPS и DNS over TLS
+2. Убедитесь, что у вас установлены пакеты `curl`, `dig`, `docker`, `docker-compose`, `nano`, `socat`.
+    > Для установки Docker и Docker-compose можно использовать команды:
+    > ```bash
+    > curl -fsSL https://get.docker.com -o get-docker.sh
+    > sh get-docker.sh
+    > ```
 
-1. Убедитесь, что ваш домен привязан к IP сервера.
-2. Создайте папку `certs` в корне проекта.
-3. Поместите в неё SSL-сертификаты с именами `fullchain.cer` и `key.key`.
+3. Убедитесь, что у вас свободны порты `53`, `80`, `443`, `853`, `8443`, `9339`, `30000`.
 
-   > Можете использовать, например, [acme.sh](https://github.com/acmesh-official/acme.sh) для получения сертификатов.
+    - 53 - UDP DNS сервер
+    - 80 - Временный HTTP сервер для генерации SSL сертификатов через acme.sh
+    - 443 - SNI Proxy/DNS-over-HTTPS
+    - 853 - DNS-over-TLS
+    - 8443 - Не будет открыт для внешних подключений, используется для внутренней системы
+    - 9339 - Прокси для одной из игр Supercell, кроме mo.co
+    - 30000 - Прокси для игры mo.co
 
-4. В `nginx.conf` поменяйте домен `dns.malw.link` на ваш домен:
+    Каждый компонент не обязателен для установки, `installer.sh` спросит вас, что вы хотите установить.
 
-   ```conf
-   map $ssl_preread_server_name $allowed_domain {
-      dns.malw.link 2;
-      include /etc/nginx/whitelist_domains.conf;
-   ```
+4. Запустите автоматический установщик
+    ```bash
+    cd dns.malw.link
+    ./installer.sh
+    ```
 
-## Если вам не нужны DNS over HTTPS и DNS over TLS
-
-1. В `docker-compose.yml` закомментируйте строки:
-
-   ```yaml
-   # - "853:853/tcp"
-   # - ./certs:/etc/dnsdist/certs:ro
-   ```
-
-2. В `dnsdist.conf` закомментируйте строки:
-
-   ```dnsdist
-   -- addTLSLocal("0.0.0.0:853", "/etc/dnsdist/certs/fullchain.cer", "/etc/dnsdist/certs/key.key")
-   -- addDOHLocal("0.0.0.0:8053", "/etc/dnsdist/certs/fullchain.cer", "/etc/dnsdist/certs/key.key", "/dns-query")
-   ```
-
-## Дальнейшие действия
-
-В файле `dnsdist.conf` замените IP-адреса:
-
-```dnsdist
-addAction(QNameSuffixRule(proxy_with_subdomains), SpoofAction({"2a05:541:104:7f::1", "45.95.233.23", "185.246.223.127"}))
-addAction(QNameSetRule(proxy), SpoofAction({"2a05:541:104:7f::1", "45.95.233.23", "185.246.223.127"}))
-```
-
-Замените на IP-адреса текущего сервера. Чтобы его узнать, выполните эти команды:
-
-```bash
-curl -4 ip.wtf  # IPv4 адрес
-curl -6 ip.wtf  # IPv6 адрес
-```
-
-Формат:
-
-```json
-{"тут ipv6", "тут ipv4"}
-```
-
-Если IPv6 нет:
-
-```json
-{"тут ipv4"}
-```
-
-Для запуска/обновления списка доменов используйте:
-
-```bash
-./update_domains.sh
-```
-
----
-
-# Запуск только DNS на сервере
-
-1. Убедитесь, что у вас установлен Docker и Docker Compose.
-2. Клонируйте нужную ветку:
-
-   ```bash
-   git clone --single-branch -b dns-server https://github.com/ImMALWARE/dns.malw.link
-   cd dns.malw.link
-   ```
-
-## Если вам нужны DNS over HTTPS и DNS over TLS
-
-1. Убедитесь, что домен привязан к IP.
-2. Создайте папку `certs` в корне проекта.
-3. Поместите в неё SSL-сертификаты с именами `fullchain.cer` и `key.key`.
-
-   > Можете использовать, например, [acme.sh](https://github.com/acmesh-official/acme.sh) для получения сертификатов.
-
-4. В `nginx.conf` поменяйте домен `dns.malw.link` на ваш домен:
-
-   ```conf
-   map $ssl_preread_server_name $allowed_domain {
-      dns.malw.link 2;
-      include /etc/nginx/whitelist_domains.conf;
-   ```
-
-## Если вам не нужны DNS over HTTPS и DNS over TLS
-
-1. В `docker-compose.yml` закомментируйте:
-
-   ```yaml
-   # - "853:853/tcp" # DNS over TLS
-   # - "443:443/tcp" # DNS over HTTPS
-   # - ./certs:/etc/dnsdist/certs:ro
-   ```
-
-2. В `dnsdist.conf` закомментируйте:
-
-   ```dnsdist
-   -- addTLSLocal("0.0.0.0:853", "/etc/dnsdist/certs/fullchain.cer", "/etc/dnsdist/certs/key.key")
-   -- addDOHLocal("0.0.0.0:443", "/etc/dnsdist/certs/fullchain.cer", "/etc/dnsdist/certs/key.key", "/dns-query")
-   ```
-
-## Дальнейшие действия
-
-В `dnsdist.conf` замените:
-
-```dnsdist
-addAction(QNameSuffixRule(proxy_with_subdomains), SpoofAction({"2a05:541:104:7f::1", "45.95.233.23", "185.246.223.127"}))
-addAction(QNameSetRule(proxy), SpoofAction({"2a05:541:104:7f::1", "45.95.233.23", "185.246.223.127"}))
-```
-
-На IP-адреса вашего сервера SNI Proxy.
-
-Узнать IP-адреса можно командами (выполните на сервере, где запущен SNI Proxy):
-
-```bash
-curl -4 ip.wtf  # IPv4
-curl -6 ip.wtf  # IPv6
-```
-
-Формат:
-
-```json
-{"тут ipv6", "тут ipv4"}
-```
-
-Если IPv6 нет:
-
-```json
-{"тут ipv4"}
-```
-
-Для запуска/обновления списка доменов используйте:
-
-```bash
-./update_domains.sh
-```
-
----
-
-# Запуск только SNI Proxy на сервере
-
-1. Убедитесь, что у вас установлен Docker и Docker Compose.
-
-2. Клонируйте ветку:
-
-   ```bash
-   git clone --single-branch -b sni-proxy https://github.com/ImMALWARE/dns.malw.link
-   cd dns.malw.link
-   ```
-
-3. Для запуска/обновления списка доменов используйте:
-
-   ```bash
-   ./update_domains.sh
-   ```
+5. Следуйте инструкциям установщика. Он спросит о выборе компонентов.

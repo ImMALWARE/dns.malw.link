@@ -1,0 +1,15 @@
+52.223.13.41 tracker.openbittorrent.com
+185.31.40.18 test.dns.malw.link
+130.255.77.28 ntc.party
+185.87.51.182 controlplane.tailscale.com
+45.95.233.23 game.clashroyaleapp.com
+64.188.98.242 gamea.clashofclans.com
+185.246.223.127 game.brawlstarsgame.com
+108.61.167.26 game.squadbustersgame.com
+45.95.233.23 game.mocogame.com
+172.64.33.155 d.rutor.info
+157.240.245.174 instagram.com
+157.240.245.174 www.instagram.com
+157.240.245.174 b.i.instagram.com
+157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
+157.240.245.174 help.instagram.com

@@ -1,0 +1,26 @@
+services:
+  dns:
+    image: powerdns/dnsdist-20:2.0.2
+    container_name: dnsdist
+    ports:
+      - "53:53/udp"
+      - "53:53/tcp"
+      - "853:853/tcp" # DNS over TLS
+      - "443:443/tcp" # DNS over HTTPS
+    env_file:
+      - ../.env
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
+    volumes:
+      - ../lists/banned_ips.txt:/etc/dnsdist/banned_ips.txt:ro
+      - ./certs:/etc/dnsdist/certs:ro
+      - ../lists/custom.txt:/etc/dnsdist/custom.txt:ro
+      - ../lists/domains_with_subdomains.txt:/etc/dnsdist/domains_with_subdomains.txt:ro
+      - ../lists/domains.txt:/etc/dnsdist/domains.txt:ro
+      - ../lists/garbage.txt:/etc/dnsdist/garbage.txt:ro
+      - ../lists/hosts.txt:/etc/dnsdist/hosts.txt:ro
+      - ./sni_proxy_ips.txt:/etc/dnsdist/sni_proxy_ips.txt:ro
+      - ./dnsdist.conf:/etc/dnsdist/dnsdist.conf:ro
+    restart: unless-stopped
