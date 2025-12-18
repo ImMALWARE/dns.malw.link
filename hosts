@@ -1,5 +1,5 @@
 ### dns.malw.link: hosts file
-# Последнее обновление: 18 декабря 2025
+# Последнее обновление: 19 декабря 2025
 
 52.223.13.41 tracker.openbittorrent.com
 185.31.40.18 test.dns.malw.link
@@ -16,6 +16,7 @@
 157.240.245.174 b.i.instagram.com
 157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
 157.240.245.174 help.instagram.com
+
 # OpenAI
 185.87.51.182 chatgpt.com
 185.87.51.182 ab.chatgpt.com
@@ -248,7 +249,7 @@
 # Pump.fun
 185.246.223.127 pump.fun
 185.246.223.127 frontend-api-v3.pump.fun
-185.246.223.127 images.pump.fun
+45.95.233.23 images.pump.fun
 185.246.223.127 swap-api.pump.fun
 
 # Truth Social

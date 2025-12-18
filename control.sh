@@ -7,10 +7,10 @@ for action in "$@"; do
         update)
             echo "Обновление списков"
             cd lists
-            curl -L -o "domains.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/main/lists/domains.txt"
-            curl -L -o "domains_with_subdomains.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/main/lists/domains_with_subdomains.txt"
-            curl -L -o "garbage.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/main/lists/garbage.txt"
-            curl -L -o "hosts.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/main/lists/hosts.txt"
+            curl -L -o "domains.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/master/lists/domains.txt"
+            curl -L -o "domains_with_subdomains.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/master/lists/domains_with_subdomains.txt"
+            curl -L -o "garbage.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/master/lists/garbage.txt"
+            curl -L -o "hosts.txt" "https://github.com/ImMALWARE/dns.malw.link/raw/master/lists/hosts.txt"
             if [ -n "$BANNED_IPS_URL" ]; then
                 curl -L -o "banned_ips.txt" "$BANNED_IPS_URL"
             fi

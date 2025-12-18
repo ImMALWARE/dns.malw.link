@@ -26,7 +26,6 @@ IPv4=$(curl -s4m3 v4.ip.wtf)
 IPv6=$(curl -s6m3 v6.ip.wtf)
 
 if [[ "$dns_choice" =~ ^[yY]$ ]]; then
-    mkdir -p ./dns-server/certs
     echo "Нужны ли DNS over HTTPS и DNS over TLS? Для этого вы должны привязать ваш домен к IP сервера: $(printf "%s %s" "$IPv4" "$IPv6" | xargs) [y/n]"
     read dot_choice
     if [[ "$dot_choice" =~ ^[yY]$ ]]; then
@@ -194,5 +193,5 @@ if [[ "$promtail_choice" =~ ^[yY]$ ]]; then
 else
     rm -rf promtail
 fi
-echo "Установка завершена."
+echo "Установка завершена. О недочётах пишите в Issues. По вопросам пишите на contact@malw.link или в чат https://t.me/immalware_chat"
 rm installer.sh

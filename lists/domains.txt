@@ -12,7 +12,6 @@ api.imgur.com
 api.jetbrains.ai
 api16-normal-alisg.mchost.guru
 assistant-s3-pa.googleapis.com
-auth.anthropic.com
 builds.parsec.app
 cdn.id.supercell.com
 clashofclans.inbox.supercell.com
