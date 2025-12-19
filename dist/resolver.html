@@ -97,16 +97,6 @@
                         await new Promise(res => setTimeout(res, 100));
                     }
                     break;
-                case 'dns.malw.link':
-                    response = await (await fetch('https://dns.malw.link/dns-api?server=dns&q=' + q.value)).json();
-                    if (!response) resps = [];
-                    else resps.push(...response);
-                    break;
-                case 'OpenNIC':
-                    response = await (await fetch('https://dns.malw.link/dns-api?server=193.31.24.55&q=' + q.value)).json();
-                    if (!response) resps = [];
-                    else resps.push(...response);
-                    break;
             }
             for (const note of resps) {
                 const row = document.createElement('tr');
@@ -183,8 +173,6 @@
                     <select id=s style=cursor:default>
                         <option>Cloudflare</option>
                         <option>Google DNS</option>
-                        <option>dns.malw.link</option>
-                        <option>OpenNIC</option>
                     </select>
                     <label>DNS-сервер</label>
                     <i>arrow_drop_down</i>
