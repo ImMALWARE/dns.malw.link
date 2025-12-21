@@ -12296,10 +12296,8 @@
 |em2025.us^$dnsrewrite=0.0.0.0
 |elzaservis.cz^$dnsrewrite=0.0.0.0
 |em.dynamicyield.com^$dnsrewrite=0.0.0.0
-|email-link.adtidy.info^$dnsrewrite=0.0.0.0
+
 |ema.hostvn.net^$dnsrewrite=0.0.0.0
-|email-link.adtidy.net^$dnsrewrite=0.0.0.0
-|email-link.adtidy.org^$dnsrewrite=0.0.0.0
 |emagia.net^$dnsrewrite=0.0.0.0
 |email-open.adtidy.net^$dnsrewrite=0.0.0.0
 |email-links.crowdfireapp.com^$dnsrewrite=0.0.0.0
