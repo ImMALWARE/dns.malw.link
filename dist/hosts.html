@@ -1,304 +1,391 @@
 <!DOCTYPE html>
 <html lang=ru>
-  <head>
-    <meta charset=UTF-8 />
-    <meta name=viewport content="width=device-width, initial-scale=1.0" />
-    <meta name=title content="hosts от dns.malw.link" />
-    <meta name=description content="hosts файл от dns.malw.link" />
-    <meta name=og:title content="hosts от dns.malw.link" />
-    <meta name=og:description content="hosts от dns.malw.link" />
-    <link rel=icon href=/favicon.ico />
-    <title>hosts от dns.malw.link</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet />
-    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.css />
-    <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
-    <script type=module src=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.js></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CCV7SLXDY"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
 
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-0CCV7SLXDY');
+<head>
+  <meta charset=UTF-8 />
+  <meta name=viewport content="width=device-width, initial-scale=1.0" />
+  <meta name=title content="hosts от dns.malw.link" />
+  <meta name=description content="hosts файл от dns.malw.link" />
+  <meta name=og:title content="hosts от dns.malw.link" />
+  <meta name=og:description content="hosts от dns.malw.link" />
+  <link rel=icon href=/favicon.ico />
+  <title>hosts от dns.malw.link</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel=stylesheet />
+  <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.css />
+  <link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css>
+  <script type=module src=https://cdn.jsdelivr.net/npm/beercss@3.11.20/dist/cdn/beer.min.js></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CCV7SLXDY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-     async function hosts(type) {
-        const url = 'https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts';
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-0CCV7SLXDY');
 
-        try {
-          const resp = await fetch(url);
-          if (!resp.ok) throw new Error('Проверьте соединение с GitHub');
+    async function hosts(type) {
+      const url = 'https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/refs/heads/master/hosts';
 
-          if (type === 1) {
-            const a = document.createElement("a");
-            a.href = URL.createObjectURL(await resp.blob());
-            a.download = "hosts";
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            URL.revokeObjectURL(a.href);
-          } else {
-            await navigator.clipboard.writeText(await resp.text());
-            document.getElementById('copy_icon').textContent = 'check';
-          }
-        } catch (err) {
-          alert(err);
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) throw new Error('Проверьте соединение с GitHub');
+
+        if (type === 1) {
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(await resp.blob());
+          a.download = "hosts";
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          URL.revokeObjectURL(a.href);
+        } else {
+          await navigator.clipboard.writeText(await resp.text());
+          document.getElementById('copy_icon').textContent = 'check';
         }
+      } catch (err) {
+        alert(err);
       }
-    </script>
-    <style>
-      @font-face {
-        font-family: "Google Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2) format("woff2");
-        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+  </script>
+  <style>
+    @font-face {
+      font-family: "Google Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Kwp5MKg.woff2) format("woff2");
+      unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+      font-family: "Google Sans";
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2) format("woff2");
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    body {
+      user-select: none;
+      font-family: "Google Sans"
+    }
+
+    @keyframes gradient-animation {
+      0% {
+        background-position: 0 center
       }
 
-      @font-face {
-        font-family: "Google Sans";
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url(https://fonts.gstatic.com/s/googlesans/v27/4UaGrENHsxJlGDuGo1OIlL3Owp4.woff2) format("woff2");
-        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+      50% {
+        background-position: 100% center
       }
 
-      body {
-        user-select: none;
-        font-family: "Google Sans"
+      100% {
+        background-position: 0 center
+      }
+    }
+
+    .title {
+      font-weight: 500;
+      text-align: center;
+      background: linear-gradient(90deg, #6750a4, #ff006f, #00c6ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: gradient-animation 2s ease infinite
+    }
+
+    nav.left {
+      background-color: var(--surface-container)
+    }
+
+    nav.tabbed {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 15px
+    }
+
+    p {
+      font-size: 1rem;
+      text-wrap: auto
+    }
+
+    li {
+      cursor: default !important;
+      font-size: 1rem
+    }
+
+    code {
+      word-wrap: break-word !important;
+      word-break: break-all !important;
+      white-space: normal !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      hyphens: auto;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
       }
 
-      @keyframes gradient-animation {
-        0% {
-          background-position: 0 center
-        }
+      h2 {
+        font-size: clamp(1.2rem, 5vw, 2rem) !important;
+      }
 
-        50% {
-          background-position: 100% center
-        }
+      h3 {
+        font-size: clamp(1.1rem, 4.5vw, 1.75rem) !important;
+      }
 
-        100% {
-          background-position: 0 center
-        }
+      h4 {
+        font-size: clamp(1rem, 4vw, 1.5rem) !important;
+      }
+
+      h5 {
+        font-size: clamp(0.9rem, 3.5vw, 1.25rem) !important;
+      }
+
+      h6 {
+        font-size: clamp(0.8rem, 3vw, 1rem) !important;
       }
 
       .title {
-        font-weight: 500;
-        text-align: center;
-        background: linear-gradient(90deg, #6750a4, #ff006f, #00c6ff);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-size: 200% auto;
-        animation: gradient-animation 2s ease infinite
+        font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
       }
 
-      nav.left {
-        background-color: var(--surface-container)
+      nav.s.bottom {
+        overflow-x: auto;
+        justify-content: safe center;
+        flex-wrap: nowrap;
       }
 
-      nav.tabbed {
-          overflow-x: auto;
-          white-space: nowrap;
-          -webkit-overflow-scrolling: touch;
-          margin-top: 15px
+      nav.s.bottom>a {
+        flex-shrink: 0;
       }
 
-      p {
-        font-size: 1rem;
-        text-wrap: auto
+      main.responsive {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        max-width: 100vw;
+        box-sizing: border-box;
       }
 
-      li {
-        cursor: default !important;
-        font-size: 1rem
+      article {
+        padding: 16px !important;
       }
-    </style>
-  </head>
-  <body>
-    <script>
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('dark');
-        }
-    </script>
-    <div>
-      <nav class="m l left">
-        <a href= />
-        <i>home</i>
-        <span>Главная</span>
+
+      .tooltip {
+        white-space: normal !important;
+        max-width: 250px;
+      }
+
+      img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.body.classList.add('dark');
+    }
+  </script>
+  <div>
+    <nav class="m l left">
+      <a href= />
+      <i>home</i>
+      <span>Главная</span>
+      </a>
+      <a href=/setup>
+        <i>build</i>
+        <span>Настройка</span>
+      </a>
+      <a href=/resolver>
+        <i>dns</i>
+        <span>Резолвер</span>
+      </a>
+      <a class=active href=/hosts>
+        <i>article</i>
+        <span>hosts</span>
+      </a>
+      <a href=/help>
+        <i>help</i>
+        <span>Помощь</span>
+      </a>
+    </nav>
+    <nav class="s bottom">
+      <a href= />
+      <i>home</i>
+      <span>Главная</span>
+      </a>
+      <a href=/setup>
+        <i>build</i>
+        <span>Настройка</span>
+      </a>
+      <a href=/resolver>
+        <i>dns</i>
+        <span>Резолвер</span>
+      </a>
+      <a class=active href=/hosts>
+        <i>article</i>
+        <span>hosts</span>
+      </a>
+      <a href=/help>
+        <i>help</i>
+        <span>Помощь</span>
+      </a>
+    </nav>
+    <main class=responsive>
+      <h1 class=title>dns.malw.link</h1>
+      <p>Если DNS-сервер слишком медленный для вас или вы не хотите изменять настройки - вы можете отредактировать файл
+        hosts в вашей системе.</p>
+      <ul class="list border">
+        <li>
+          <i>thumb_up</i>
+          <p>Не повлияет на скорость ответа текущего DNS-сервера</p>
+        </li>
+        <li>
+          <i>thumb_up</i>
+          <p>Будут проксироваться исключительно сайты с ограничениями (список на главной странице)</p>
+        </li>
+        <li>
+          <i>thumb_up</i>
+          <p>Поддерживается на Windows, macOS, Linux, Android с root</p>
+        </li>
+        <li>
+          <i>thumb_down</i>
+          <p>hosts файл придётся регулярно обновлять</p>
+        </li>
+      </ul>
+      <p>Файл hosts — это текстовый файл, который сопоставляет доменные имена IP-адресам. Когда вы вводите адрес сайта
+        (например, <code>info.dns.malw.link</code>), система сначала смотрит в этот файл: если находит там запись,
+        использует указанный IP, не обращаясь к DNS-серверу. </p>
+      <div style=text-align:center;margin-top:16px>
+        <button style=margin-top:16px onclick=hosts(1)>
+          <i>download</i>
+          <span>Скачать актуальный hosts файл</span>
+        </button>
+        <button style=margin-top:16px onclick=hosts(2)>
+          <i id=copy_icon>content_copy</i>
+          <span>Копировать содержимое актуального hosts файла</span>
+        </button>
+      </div>
+      <div id="update_date">
+        <div class="shape loading-indicator extra" style="margin: 15px auto"></div>
+      </div>
+      <h3 style=text-align:center>Где он находится и как его заменить?</h3>
+      <nav class=tabbed>
+        <a class="active tab" data-ui="#windows">
+          <i class="fa-brands fa-windows"></i>
+          <span>Windows</span>
         </a>
-        <a href=/setup>
-          <i>build</i>
-          <span>Настройка</span>
+        <a class=tab data-ui="#macos">
+          <i class="fa-brands fa-apple"></i>
+          <span>macOS</span>
         </a>
-        <a href=/resolver>
-          <i>dns</i>
-          <span>Резолвер</span>
+        <a class=tab data-ui="#linux">
+          <i class="fa-brands fa-linux"></i>
+          <span>Linux</span>
         </a>
-        <a class=active href=/hosts>
-          <i>article</i>
-          <span>hosts</span>
-        </a>
-        <a href=/help>
-          <i>help</i>
-          <span>Помощь</span>
+        <a class=tab data-ui="#android">
+          <i>android</i>
+          <span>Android (с root)</span>
         </a>
       </nav>
-      <nav class="s bottom">
-        <a href= />
-        <i>home</i>
-        <span>Главная</span>
-        </a>
-        <a href=/setup>
-          <i>build</i>
-          <span>Настройка</span>
-        </a>
-        <a href=/resolver>
-          <i>dns</i>
-          <span>Резолвер</span>
-        </a>
-        <a class=active href=/hosts>
-          <i>article</i>
-          <span>hosts</span>
-        </a>
-        <a href=/help>
-          <i>help</i>
-          <span>Помощь</span>
-        </a>
-      </nav>
-      <main class=responsive>
-        <h1 class=title>dns.malw.link</h1>
-        <p>Если DNS-сервер слишком медленный для вас или вы не хотите изменять настройки - вы можете отредактировать файл hosts в вашей системе.</p>
-        <ul class="list border">
+      <div class="page padding active" id=windows>
+        <p>Откройте папку <code>%SystemRoot%\System32\drivers\etc</code> (вставьте эту строку в поиск Windows) </p>
+        <button
+          onclick="navigator.clipboard.writeText('%SystemRoot%\\System32\\drivers\\etc');this.firstChild.textContent='check'"><i>content_copy</i>
+          <span>Копировать</span>
+        </button>
+        <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
+        <p>Лучше именно скачивать и заменять файл, чем редактировать его</p>
+      </div>
+      <div class="page padding" id=macos>
+        <p>Файл hosts может быть либо в папке <code>/etc</code>, либо в <code>/private/etc</code> в корне файловой
+          системы </p>
+        <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
+        <p>Либо же вставьте в него скопированное содержимое</p>
+      </div>
+      <div class="page padding" id=linux>
+        <p>Откройте папку <code>/etc</code> в корне файловой системы </p>
+        <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
+        <p>Либо же вставьте в него скопированное содержимое</p>
+      </div>
+      <div class="page padding" id=android>
+        <h4>Без root прав отредактировать hosts нельзя!</h4>
+        <h5>Если у вас Magisk:</h5>
+        <ol>
           <li>
-            <i>thumb_up</i>
-            <p>Не повлияет на скорость ответа текущего DNS-сервера</p>
+            <p>Откройте настройки Magisk, включите «Внесистемный hosts файл», перезагрузите смартфон</p>
           </li>
           <li>
-            <i>thumb_up</i>
-            <p>Будут проксироваться исключительно сайты с ограничениями (список на главной странице)</p>
+            <p>Установите приложение AdAway</p>
+            <a class=button target=_blank href=https://github.com/AdAway/AdAway/releases/latest>
+              <i>open_in_new</i>Скачать AdAway </a>
           </li>
           <li>
-            <i>thumb_up</i>
-            <p>Поддерживается на Windows, macOS, Linux, Android с root</p>
+            <p>Запустите его, выберите метод с root, на главном экране нажмите на надпись "3 обновлённых источника"</p>
           </li>
           <li>
-            <i>thumb_down</i>
-            <p>hosts файл придётся регулярно обновлять</p>
+            <p>Нажмите на + внизу справа</p>
           </li>
-        </ul>
-        <p>Файл hosts — это текстовый файл, который сопоставляет доменные имена IP-адресам. Когда вы вводите адрес сайта (например, <code>info.dns.malw.link</code>), система сначала смотрит в этот файл: если находит там запись, использует указанный IP, не обращаясь к DNS-серверу. </p>
-        <div style=text-align:center;margin-top:16px>
-          <button style=margin-top:16px onclick=hosts(1)>
-            <i>download</i>
-            <span>Скачать актуальный hosts файл</span>
-          </button>
-          <button style=margin-top:16px onclick=hosts(2)>
-            <i id=copy_icon>content_copy</i>
-            <span>Копировать содержимое актуального hosts файла</span>
-          </button>
-        </div>
-        <div id="update_date">
-          <div class="shape loading-indicator extra" style="margin: 15px auto"></div>
-        </div>
-        <h3 style=text-align:center>Где он находится и как его заменить?</h3>
-        <nav class=tabbed>
-          <a class="active tab" data-ui="#windows">
-            <i class="fa-brands fa-windows"></i>
-            <span>Windows</span>
-          </a>
-          <a class=tab data-ui="#macos">
-            <i class="fa-brands fa-apple"></i>
-            <span>macOS</span>
-          </a>
-          <a class=tab data-ui="#linux">
-            <i class="fa-brands fa-linux"></i>
-            <span>Linux</span>
-          </a>
-          <a class=tab data-ui="#android">
-            <i>android</i>
-            <span>Android (с root)</span>
-          </a>
-        </nav>
-        <div class="page padding active" id=windows>
-          <p>Откройте папку <code>%SystemRoot%\System32\drivers\etc</code> (вставьте эту строку в поиск Windows) </p>
-          <button onclick="navigator.clipboard.writeText('%SystemRoot%\\System32\\drivers\\etc');this.firstChild.textContent='check'"><i>content_copy</i>
-            <span>Копировать</span>
-          </button>
-          <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
-          <p>Лучше именно скачивать и заменять файл, чем редактировать его</p>
-        </div>
-        <div class="page padding" id=macos>
-          <p>Файл hosts может быть либо в папке <code>/etc</code>, либо в <code>/private/etc</code> в корне файловой системы </p>
-          <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
-          <p>Либо же вставьте в него скопированное содержимое</p>
-        </div>
-        <div class="page padding" id=linux>
-          <p>Откройте папку <code>/etc</code> в корне файловой системы </p>
-          <p>Скопируйте скачанный hosts из Загрузку в эту папку, подтвердите замену</p>
-          <p>Либо же вставьте в него скопированное содержимое</p>
-        </div>
-        <div class="page padding" id=android>
-          <h4>Без root прав отредактировать hosts нельзя!</h4>
-          <h5>Если у вас Magisk:</h5>
-          <ol>
-            <li>
-              <p>Откройте настройки Magisk, включите «Внесистемный hosts файл», перезагрузите смартфон</p>
-            </li>
-            <li>
-              <p>Установите приложение AdAway</p>
-              <a class=button target=_blank href=https://github.com/AdAway/AdAway/releases/latest>
-                <i>open_in_new</i>Скачать AdAway </a>
-            </li>
-            <li>
-              <p>Запустите его, выберите метод с root, на главном экране нажмите на надпись "3 обновлённых источника"</p>
-            </li>
-            <li>
-              <p>Нажмите на + внизу справа</p>
-            </li>
-            <li>
-              <p>В поле "Метка" введите любое название, например "hosts от dns.malw.link"</p>
-              <button onclick="navigator.clipboard.writeText('hosts от dns.malw.link');this.firstChild.textContent='check'"><i>content_copy</i>
-                <span>Копировать</span>
-              </button>
-              <p>Местоположение — <code>https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts</code>
-              </p>
-              <button onclick="navigator.clipboard.writeText('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts');this.firstChild.textContent='check'"><i>content_copy</i>
-                <span>Копировать</span>
-              </button>
-            </li>
-            <li>
-              <p>Обязательно поставьте галочку "Применить перенаправленные хосты", сохраните</p>
-            </li>
-            <li>
-              <p>На главном экране нажмите кнопку скачивания рядом с "0 устаревших источников"</p>
-            </li>
-          </ol>
-          <h5>Если у вас системный root (обычно на старых устройствах):</h5>
-          <ol>
-            <li>
-              <p>Скачайте Total Commander</p>
-              <a class=button target=_blank href=https://www.ghisler.com/tcandroid3.apk>
-                <i>open_in_new</i>Скачать Total Commander </a>
-            </li>
-            <li>
-              <p>Откройте "Корневую папку", разрешите доступ к root</p>
-            </li>
-            <li>
-              <p>Перейдите в папку system -> etc</p>
-            </li>
-            <li>
-              <p>Скопируйте hosts из Загрузок в эту папку (откройте Загрузки в правой панели), подтвердите замену</p>
-            </li>
-          </ol>
-          <p>Либо же удерживайте hosts -> Открыть как -> Текст -> Totalcmd Editor. Вставьте скопированное содержимое и сохраните</p>
-        </div>
-      </main>
-    </div>
-    <script>
+          <li>
+            <p>В поле "Метка" введите любое название, например "hosts от dns.malw.link"</p>
+            <button
+              onclick="navigator.clipboard.writeText('hosts от dns.malw.link');this.firstChild.textContent='check'"><i>content_copy</i>
+              <span>Копировать</span>
+            </button>
+            <p>Местоположение — <code>https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts</code>
+            </p>
+            <button
+              onclick="navigator.clipboard.writeText('https://raw.githubusercontent.com/ImMALWARE/dns.malw.link/master/hosts');this.firstChild.textContent='check'"><i>content_copy</i>
+              <span>Копировать</span>
+            </button>
+          </li>
+          <li>
+            <p>Обязательно поставьте галочку "Применить перенаправленные хосты", сохраните</p>
+          </li>
+          <li>
+            <p>На главном экране нажмите кнопку скачивания рядом с "0 устаревших источников"</p>
+          </li>
+        </ol>
+        <h5>Если у вас системный root (обычно на старых устройствах):</h5>
+        <ol>
+          <li>
+            <p>Скачайте Total Commander</p>
+            <a class=button target=_blank href=https://www.ghisler.com/tcandroid3.apk>
+              <i>open_in_new</i>Скачать Total Commander </a>
+          </li>
+          <li>
+            <p>Откройте "Корневую папку", разрешите доступ к root</p>
+          </li>
+          <li>
+            <p>Перейдите в папку system -> etc</p>
+          </li>
+          <li>
+            <p>Скопируйте hosts из Загрузок в эту папку (откройте Загрузки в правой панели), подтвердите замену</p>
+          </li>
+        </ol>
+        <p>Либо же удерживайте hosts -> Открыть как -> Текст -> Totalcmd Editor. Вставьте скопированное содержимое и
+          сохраните</p>
+      </div>
+    </main>
+  </div>
+  <script>
     (async () => {
       let update_text;
       try {
@@ -314,6 +401,7 @@
       document.getElementById('update_date').innerHTML =
         `<p style="text-align:center; margin-top:25px">${update_text}</p>`;
     })();
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

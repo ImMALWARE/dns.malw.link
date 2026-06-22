@@ -41,7 +41,8 @@
 
         body {
             user-select: none;
-            font-family: "Google Sans"
+            font-family: "Google Sans";
+            overflow-x: hidden;
         }
 
         @keyframes gradient-animation {
@@ -87,6 +88,52 @@
 
         li {
             cursor: default !important
+        }
+
+        code {
+            word-wrap: break-word !important;
+            word-break: break-all !important;
+            white-space: normal !important;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        @media (max-width: 600px) {
+            h1 { font-size: clamp(1.5rem, 6vw, 2.5rem) !important; }
+            h2 { font-size: clamp(1.2rem, 5vw, 2rem) !important; }
+            h3 { font-size: clamp(1.1rem, 4.5vw, 1.75rem) !important; }
+            h4 { font-size: clamp(1rem, 4vw, 1.5rem) !important; }
+            h5 { font-size: clamp(0.9rem, 3.5vw, 1.25rem) !important; }
+            h6 { font-size: clamp(0.8rem, 3vw, 1rem) !important; }
+            .title {
+                font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+            }
+            nav.s.bottom {
+                overflow-x: auto;
+                justify-content: safe center;
+                flex-wrap: nowrap;
+            }
+            nav.s.bottom > a {
+                flex-shrink: 0;
+            }
+            main.responsive {
+                padding-left: 16px !important;
+                padding-right: 16px !important;
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+            article {
+                padding: 16px !important;
+            }
+            .tooltip {
+                white-space: normal !important;
+                max-width: 250px;
+            }
+            img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
