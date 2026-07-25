@@ -1,4 +1,7 @@
 /dns.malw.link.mobileconfig
-  Content-Type: application/octet-stream
+  Content-Type: application/x-apple-aspen-config
+  Content-Disposition: attachment; filename="dns.malw.link.mobileconfig"
+
 /dns.malw.link_cloudflare.mobileconfig
-  Content-Type: application/octet-stream
+  Content-Type: application/x-apple-aspen-config
+  Content-Disposition: attachment; filename="dns.malw.link_cloudflare.mobileconfig"
