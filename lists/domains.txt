@@ -80,3 +80,5 @@ xsts.auth.xboxlive.com
 app.notion.com
 api.loveable.dev
 ai-gateway.vercel.sh
+antigravity-unleash.goog
+daily-cloudcode-pa.googleapis.com
