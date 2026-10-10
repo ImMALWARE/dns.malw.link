@@ -186,7 +186,7 @@
             "jules.google.com",
             "stitch.withgoogle.com"
         ],
-        "force_ip": "62.133.62.97"
+        "force_ip": "179.254.166.174"
     },
     {
         "section": "Claude",
@@ -199,16 +199,7 @@
         ]
     },
     {
-        "section": "Trae.ai",
-        "domains": [
-            "trae-api-sg.mchost.guru",
-            "api.trae.ai",
-            "api-sg-central.trae.ai",
-            "api16-normal-alisg.mchost.guru"
-        ]
-    },
-    {
-        "section": "Linear.app",
+        "section": "Linear",
         "domains": [
             "linear.app",
             "client-api.linear.app",
@@ -220,31 +211,10 @@
         ]
     },
     {
-        "section": "Windsurf",
-        "domains": [
-            "windsurf.com",
-            "codeium.com",
-            "server.codeium.com",
-            "web-backend.codeium.com",
-            "unleash.codeium.com",
-            "inference.codeium.com",
-            "windsurf-stable.codeium.com",
-            "windsurf-telemetry.codeium.com",
-            "marketplace.windsurf.com"
-        ]
-    },
-    {
         "section": "Twitch",
         "domains": [
             "usher.ttvnw.net",
             "gql.twitch.tv"
-        ]
-    },
-    {
-        "section": "Manus",
-        "domains": [
-            "manus.im",
-            "api.manus.im"
         ]
     },
     {
@@ -264,25 +234,13 @@
         ]
     },
     {
-        "section": "Intel",
-        "domains": [
-            "www.intel.com"
-        ]
-    },
-    {
-        "section": "Dell",
-        "domains": [
-            "www.dell.com"
-        ]
-    },
-    {
         "section": "TikTok",
         "domains": [
             "www.tiktok.com"
         ]
     },
     {
-        "section": "Archive.org",
+        "section": "Web Archive",
         "domains": [
             "web.archive.org"
         ]
@@ -300,57 +258,10 @@
         ]
     },
     {
-        "section": "Tria.ge",
-        "domains": [
-            "tria.ge"
-        ]
-    },
-    {
-        "section": "Qwant",
-        "domains": [
-            "www.qwant.com"
-        ]
-    },
-    {
-        "section": "guidedhacking.com",
-        "domains": [
-            "guidedhacking.com"
-        ]
-    },
-    {
-        "section": "Framer",
-        "domains": [
-            "framer.com"
-        ]
-    },
-    {
-        "section": "Autodesk",
-        "domains": [
-            "accounts.autodesk.com",
-            "www.autodesk.com"
-        ]
-    },
-    {
-        "section": "Pump.fun",
-        "domains": [
-            "pump.fun",
-            "frontend-api-v3.pump.fun",
-            "images.pump.fun",
-            "swap-api.pump.fun"
-
-        ]
-    },
-    {
         "section": "Truth Social",
         "domains": [
             "truthsocial.com",
             "static-assets-1.truthsocial.com"
-        ]
-    },
-    {
-        "section": "Elgato",
-        "domains": [
-            "www.elgato.com"
         ]
     },
     {
@@ -365,12 +276,6 @@
             "dyson.com",
             "www.dyson.com",
             "www.dyson.fr"
-        ]
-    },
-    {
-        "section": "Broadcom",
-        "domains": [
-            "profile.broadcom.com"
         ]
     },
     {
