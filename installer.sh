@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dependencies=(curl dig docker docker-compose nano socat)
+dependencies=(curl dig docker nano socat)
 ports=(53 80 443 853 8443 9339 30000)
 
 for cmd in "${dependencies[@]}"; do
@@ -9,6 +9,15 @@ for cmd in "${dependencies[@]}"; do
         exit 1
     fi
 done
+
+if docker compose version &> /dev/null; then
+    DOCKER_COMPOSE=(docker compose)
+elif docker-compose version &> /dev/null; then
+    DOCKER_COMPOSE=(docker-compose)
+else
+    echo "Ошибка: Не установлен Docker Compose (docker compose или docker-compose). Установите его и снова запустите установщик."
+    exit 1
+fi
 
 for port in "${ports[@]}"; do
     if ss -lntu | grep -qE ":$port\s+"; then
@@ -157,14 +166,14 @@ fi
 
 if [[ "$dns_choice" =~ ^[yY] ]]; then
     echo "Запуск dnsdist"
-    cd dns-server && docker-compose up -d && cd ..
+    cd dns-server && "${DOCKER_COMPOSE[@]}" up -d && cd ..
 else
     rm -rf dns-server
 fi
 
 if [[ "$sni_proxy_choice" =~ ^[yY]$ ]] || [ "$game_added" = true ]; then
     echo "Запуск nginx"
-    cd sni-proxy && docker-compose up -d && cd ..
+    cd sni-proxy && "${DOCKER_COMPOSE[@]}" up -d && cd ..
 else
     rm -rf sni-proxy
 fi
@@ -189,7 +198,7 @@ if [[ "$promtail_choice" =~ ^[yY]$ ]]; then
     sed -i "s|^PROMTAIL_USER_ID=.*|PROMTAIL_USER_ID=$promtail_user|" .env
 
     echo "Запуск promtail"
-    cd promtail && docker-compose up -d && cd ..
+    cd promtail && "${DOCKER_COMPOSE[@]}" up -d && cd ..
 else
     rm -rf promtail
 fi

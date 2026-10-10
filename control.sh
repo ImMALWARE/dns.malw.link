@@ -20,15 +20,15 @@ for action in "$@"; do
         restart)
             if [ -d "dns-server" ]; then
                 echo "Перезапуск dnsdist"
-                cd dns-server && docker-compose down && docker-compose up -d && cd ..
+                cd dns-server && docker compose down && docker compose up -d && cd ..
             fi
             if [ -d "sni-proxy" ]; then
                 echo "Перезапуск nginx"
-                cd sni-proxy && docker-compose down && docker-compose up -d && cd ..
+                cd sni-proxy && docker compose down && docker compose up -d && cd ..
             fi
             if [ -d "promtail" ]; then
                 echo "Перезапуск promtail"
-                cd promtail && docker-compose down && docker-compose up -d && cd ..
+                cd promtail && docker compose down && docker compose up -d && cd ..
             fi
         ;;
         logall)

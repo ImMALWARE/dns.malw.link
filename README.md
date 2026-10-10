@@ -11,8 +11,8 @@ DNS и SNI Proxy обходят блокировки IP-адресов от са
    git clone --depth 1 https://github.com/ImMALWARE/dns.malw.link
    ```
 
-2. Убедитесь, что у вас установлены пакеты `curl`, `dig`, `docker`, `docker-compose`, `nano`, `socat`.
-    > Для установки Docker и Docker-compose можно использовать команды:
+2. Убедитесь, что у вас установлены `curl`, `dig`, `docker`, `docker compose`, `nano`, `socat`.
+    > Для установки Docker и Docker Compose можно использовать команды:
     > ```bash
     > curl -fsSL https://get.docker.com -o get-docker.sh
     > sh get-docker.sh
