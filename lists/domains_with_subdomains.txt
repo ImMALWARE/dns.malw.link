@@ -18,7 +18,6 @@ elevenreader.io
 githubcopilot.com
 grok.com
 grokusercontent.com
-httptoolkit.com
 hybrid-analysis.com
 last.fm
 linear.app
