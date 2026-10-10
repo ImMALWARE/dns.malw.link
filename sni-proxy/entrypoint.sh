@@ -13,17 +13,11 @@ if [ -f /etc/nginx/lists/domains.txt ]; then
 fi
 
 if [ -f /etc/nginx/lists/domains_with_subdomains.txt ]; then
-    awk 'NF {
-        gsub(/\./, "\\\\.");
-        print "~(^|\\\\.)" $0 "$ 1;"
-    }' /etc/nginx/lists/domains_with_subdomains.txt > /etc/nginx/whitelist_domains_with_subdomains.conf
+    awk 'NF {print "." $0 " 1;"}' /etc/nginx/lists/domains_with_subdomains.txt > /etc/nginx/whitelist_domains_with_subdomains.conf
 fi
 
 if [ -f /etc/nginx/lists/custom.txt ]; then
-    awk 'NF {
-        gsub(/\./, "\\\\.");
-        print "~(^|\\\\.)" $0 "$ 1;"
-    }' /etc/nginx/lists/custom.txt > /etc/nginx/whitelist_custom.conf
+    awk 'NF {print "." $0 " 1;"}' /etc/nginx/lists/custom.txt > /etc/nginx/whitelist_custom.conf
 fi
 
 if [ "$LOG_ALL" != "true" ]; then
