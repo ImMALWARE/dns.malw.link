@@ -1,9 +1,9 @@
 185.31.40.18 test.dns.malw.link
 130.255.77.28 ntc.party
-0.0.0.0 game.clashroyaleapp.com
-0.0.0.0 gamea.clashofclans.com
+179.254.166.171 game.clashroyaleapp.com
+164.5.224.81 gamea.clashofclans.com
 179.254.166.174 game.brawlstarsgame.com
-0.0.0.0 game.mocogame.com
+179.254.166.171 game.mocogame.com
 57.144.248.34 instagram.com
 57.144.248.34 www.instagram.com
 57.144.248.34 b.i.instagram.com

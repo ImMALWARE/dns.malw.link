@@ -6,7 +6,7 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: https://${PROMTAIL_USER_ID}:${PROMTAIL_TOKEN}@${PROMTAIL_URL}
+  - url: https://${PROMTAIL_USER_ID}:${PROMTAIL_TOKEN}@${PROMTAIL_URL}/loki/api/v1/push
     external_labels:
       host: ${PROMTAIL_SERVER_NAME}
       application: "dns.malw.link"
