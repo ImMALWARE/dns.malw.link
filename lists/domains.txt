@@ -42,6 +42,7 @@ gql.twitch.tv
 jules.google.com
 labs.google
 notebooklm.google.com
+notebook.google.com
 o.pki.goog
 plugins.jetbrains.com
 proactivebackend-pa.googleapis.com

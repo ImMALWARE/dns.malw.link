@@ -186,7 +186,8 @@
             "notebooklm.google.com",
             "jules.google.com",
             "stitch.withgoogle.com",
-            "flow.google.com"
+            "flow.google.com",
+            "notebook.google.com"
         ],
         "force_ip": "179.254.166.174"
     },

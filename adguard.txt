@@ -115,6 +115,7 @@
 |fitbitvestibuleshim-pa.googleapis.com^$dnsrewrite=179.254.166.174
 |fitbit.google.com^$dnsrewrite=179.254.166.174
 |gemini.google.com^$dnsrewrite=179.254.166.174
+|notebook.google.com^$dnsrewrite=179.254.166.174
 |geminiweb-pa.clients6.google.com^$dnsrewrite=179.254.166.174
 |flow.google.com^$dnsrewrite=179.254.166.174
 |aistudio.google.com^$dnsrewrite=179.254.166.174
