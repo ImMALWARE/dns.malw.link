@@ -26,9 +26,9 @@ ads.icq.com
 ads.viqeo.tv
 ads.vk.ru
 ads.wildberries.ru
+ads.yandex
 ads.yandex.com
 ads.yandex.ru
-ads.yandex
 ads.yango.com
 ads.youtube.com
 adsadvisor.io
@@ -164,6 +164,7 @@ r0.mail.ru
 r0.mradx.net
 r1.mail.ru
 radar.imgsmail.ru
+reef.vk-cdn.net
 reklama.mail.ru
 relap.mail.ru
 report.ap.yandex-net.ru
@@ -207,9 +208,9 @@ webvisor.com
 webvisor.org
 whiteline.mail.ru
 xapi.ozon.by
+xapi.ozon.com
 xapi.ozon.com.by
 xapi.ozon.com.kz
-xapi.ozon.com
 xapi.ozon.kz
 xapi.ozon.ru
 xapi.ozonru.me
@@ -219,4 +220,3 @@ yads.tech
 yandex-metrica.ru
 yandexmetrica.com
 yango-ads.com
-reef.vk-cdn.net
