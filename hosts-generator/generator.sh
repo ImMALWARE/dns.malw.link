@@ -18,8 +18,30 @@ echo -e "# Последнее обновление: $(date '+%d %B %Y')\n" >> ..
 tr -d '\r' < ../lists/hosts.txt >> ../hosts
 echo >> ../hosts
 
-declare -A checked_domains
-declare -A domain_ips
+STATE_DIR=$(mktemp -d "${TMPDIR:-/tmp}/hosts-generator.XXXXXX") || exit 1
+trap 'rm -rf "$STATE_DIR"' EXIT
+CHECKED_DOMAINS="$STATE_DIR/checked_domains"
+DOMAIN_IPS="$STATE_DIR/domain_ips"
+SEEN_DOMAINS="$STATE_DIR/seen_domains"
+: > "$CHECKED_DOMAINS"
+: > "$DOMAIN_IPS"
+: > "$SEEN_DOMAINS"
+
+has_domain() {
+    grep -F -x -q "$2" "$1"
+}
+
+mark_domain() {
+    printf '%s\n' "$2" >> "$1"
+}
+
+set_domain_ip() {
+    printf '%s\t%s\n' "$2" "$3" >> "$1"
+}
+
+get_domain_ip() {
+    awk -F '\t' -v domain="$2" '$1 == domain { print $2; exit }' "$1"
+}
 
 while read -r section; do
     sec_name=$(echo "$section" | jq -r '.section')
@@ -30,7 +52,7 @@ while read -r section; do
         if [[ -n "$force_ip" ]]; then
             echo "Используется $force_ip для $domain"
             echo "$force_ip $domain" >> ../hosts
-            domain_ips["$domain"]=$force_ip
+            set_domain_ip "$DOMAIN_IPS" "$domain" "$force_ip"
         else
             found=0
             echo "Проверка $domain..."
@@ -38,7 +60,7 @@ while read -r section; do
                 if curl -s -o /dev/null -m 15 "https://$domain" --connect-to "::$ip"; then
                     echo "$ip $domain" >> ../hosts
                     echo "Найден $ip для $domain"
-                    domain_ips["$domain"]=$ip
+                    set_domain_ip "$DOMAIN_IPS" "$domain" "$ip"
                     found=1
                     break
                 fi
@@ -48,7 +70,7 @@ while read -r section; do
                 echo "!!! Не найден рабочий IP для $domain"
             fi
         fi
-        checked_domains["$domain"]=1
+        mark_domain "$CHECKED_DOMAINS" "$domain"
     done
 done < <(jq -c '.[]' input_domains.json)
 
@@ -59,27 +81,26 @@ echo -e "\n\n### dns.malw.link: end hosts file" >> ../hosts
 
 default_ip=$(tr -d '\r' < ../dns-server/sni_proxy_ips.txt | grep -v ":" | head -n1)
 
-declare -A seen_domains
 > ../adguard.txt
 
 while read -r ip domain; do
-    if [[ -n "$domain" && -z "${seen_domains[$domain]}" ]]; then
+    if [[ -n "$domain" ]] && ! has_domain "$SEEN_DOMAINS" "$domain"; then
         echo "|$domain^\$dnsrewrite=$ip" >> ../adguard.txt
-        seen_domains["$domain"]=1
+        mark_domain "$SEEN_DOMAINS" "$domain"
     fi
 done < <(tr -d '\r' < ../lists/hosts.txt)
 
 while read -r section; do
     force_ip=$(echo "$section" | jq -r '.force_ip // ""')
     while read -r domain; do
-        if [[ -z "${seen_domains[$domain]}" ]]; then
+        if ! has_domain "$SEEN_DOMAINS" "$domain"; then
             if [[ -n "$force_ip" ]]; then
                 echo "|$domain^\$dnsrewrite=$force_ip" >> ../adguard.txt
-                seen_domains["$domain"]=1
-            elif [[ -n "${domain_ips[$domain]}" ]]; then
-                echo "|$domain^\$dnsrewrite=${domain_ips[$domain]}" >> ../adguard.txt
-                seen_domains["$domain"]=1
-            elif [[ -n "${checked_domains[$domain]}" ]]; then
+                mark_domain "$SEEN_DOMAINS" "$domain"
+            elif domain_ip=$(get_domain_ip "$DOMAIN_IPS" "$domain") && [[ -n "$domain_ip" ]]; then
+                echo "|$domain^\$dnsrewrite=$domain_ip" >> ../adguard.txt
+                mark_domain "$SEEN_DOMAINS" "$domain"
+            elif has_domain "$CHECKED_DOMAINS" "$domain"; then
                 :
             else
                 found=0
@@ -87,7 +108,7 @@ while read -r section; do
                 for ip in "${IPS[@]}"; do
                     if curl -s -o /dev/null -m 15 "https://$domain" --connect-to "::$ip"; then
                         echo "|$domain^\$dnsrewrite=$ip" >> ../adguard.txt
-                        seen_domains["$domain"]=1
+                        mark_domain "$SEEN_DOMAINS" "$domain"
                         echo "Найден $ip для $domain (AdGuard)"
                         found=1
                         break
@@ -103,22 +124,22 @@ while read -r section; do
 done < <(jq -c '.[]' input_domains.json)
 
 while read -r domain; do
-    if [[ -n "$domain" && -z "${seen_domains[$domain]}" ]]; then
+    if [[ -n "$domain" ]] && ! has_domain "$SEEN_DOMAINS" "$domain"; then
         echo "||$domain^\$dnsrewrite=$default_ip" >> ../adguard.txt
-        seen_domains["$domain"]=1
+        mark_domain "$SEEN_DOMAINS" "$domain"
     fi
 done < <(tr -d '\r' < ../lists/domains_with_subdomains.txt)
 
 echo >> ../adguard.txt
 
 while read -r domain; do
-    if [[ -n "$domain" && -z "${seen_domains[$domain]}" ]]; then
+    if [[ -n "$domain" ]] && ! has_domain "$SEEN_DOMAINS" "$domain"; then
         found=0
             echo "Проверка $domain (AdGuard)..."
         for ip in "${IPS[@]}"; do
             if curl -s -o /dev/null -m 15 "https://$domain" --connect-to "::$ip"; then
                 echo "|$domain^\$dnsrewrite=$ip" >> ../adguard.txt
-                seen_domains["$domain"]=1
+                mark_domain "$SEEN_DOMAINS" "$domain"
                     echo "Найден $ip для $domain (AdGuard)"
                 found=1
                 break
@@ -132,8 +153,8 @@ while read -r domain; do
 done < <(tr -d '\r' < ../lists/domains.txt)
 
 while read -r domain; do
-    if [[ -n "$domain" && -z "${seen_domains[$domain]}" ]]; then
+    if [[ -n "$domain" ]] && ! has_domain "$SEEN_DOMAINS" "$domain"; then
         echo "|$domain^\$dnsrewrite=0.0.0.0" >> ../adguard.txt
-        seen_domains["$domain"]=1
+        mark_domain "$SEEN_DOMAINS" "$domain"
     fi
 done < <(tr -d '\r' < ../lists/garbage.txt)
